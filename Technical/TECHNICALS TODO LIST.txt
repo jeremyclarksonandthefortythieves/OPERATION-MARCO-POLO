@@ -1,0 +1,22 @@
+Vertical Slice:
+
+Features:
+	Player movement
+		movement
+		looking
+		shooting
+		
+	Objective
+	Lightning
+	
+	AI
+		Reaction
+		Attack
+		Movement
+	
+	
+
+	
+	-Currency
+	-Looting
+	
