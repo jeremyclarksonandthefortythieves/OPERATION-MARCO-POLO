@@ -30,28 +30,32 @@ public class enemySight : MonoBehaviour {
 			personalLastSighting = lastPlayerSighting.position;
 
 		previousSighting = lastPlayerSighting.position;
-
+	//	float dist = Vector3.Distance(transform.position, player.transform.position);
+		//Vector3 direction = player.transform.position - transform.position;
+	//	Debug.DrawRay(transform.position, direction.normalized * dist, Color.red);
 	}
 
 	void OnTriggerStay(Collider other)
 	{
+		
+
 		if (other.gameObject == player) {
-
+		
 			playerInSight = false;
+			//Debug.Log("player in circle");
 
+			//Vector3 direction = other.gameObject.transform.position - gameObject.transform.position;
+			float distance = Vector3.Distance(transform.position, player.transform.position);
 			Vector3 direction = other.transform.position - transform.position;
 			float angle = Vector3.Angle(direction, transform.forward);
-
-			if(angle < fieldOfView * 0.5f)
-			{
+			Debug.DrawRay(transform.position, direction.normalized * distance, Color.red);
+			if (angle < fieldOfView * 0.5f) {
 				RaycastHit hit;
-
-				if(Physics.Raycast (transform.position + transform.up, direction.normalized, out hit, col.radius))
-				{
-					if(hit.collider.gameObject == player)
-					{
+				Debug.Log("player in sight");
+				if (Physics.Raycast(transform.position, direction.normalized * distance, out hit, col.radius)) {
+					if (hit.collider.gameObject == player) {
 						playerInSight = true;
-
+						Debug.Log("player seen");
 						lastPlayerSighting.position = player.transform.position;
 
 					}

@@ -104,3 +104,15 @@
 	}
 	FallBack "Diffuse"	// Shader to use if the user's hardware cannot incorporate this one
 }
+
+//fragmentInput vert(vertexInput i){
+//               	fragmentInput o;
+//                
+//            	float4x4 modelMatrix = _Object2World;
+//            	float4x4 modelMatrixInverse = _World2Object; 
+//               	
+//            	o.posWorld = mul(modelMatrix, i.vertex);
+//            	o.normalDir = normalize(mul(float4(i.normal, 0.0), modelMatrixInverse).xyz);
+//            	o.pos = mul(UNITY_MATRIX_MVP, i.vertex);
+//            	return o;
+//            }
