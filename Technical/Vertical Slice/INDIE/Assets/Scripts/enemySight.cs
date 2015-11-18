@@ -42,18 +42,25 @@ public class enemySight : MonoBehaviour {
 		if (other.gameObject == player) {
 		
 			playerInSight = false;
-			//Debug.Log("player in circle");
+			float dist = Vector3.Distance(transform.position, player.transform.position);
+			Vector3 dir = player.transform.position - transform.position;
+			float angle = Vector3.Angle(dir.normalized * dist, transform.forward);
 
-			//Vector3 direction = other.gameObject.transform.position - gameObject.transform.position;
-			float distance = Vector3.Distance(transform.position, player.transform.position);
-			Vector3 direction = other.transform.position - transform.position;
-			float angle = Vector3.Angle(direction, transform.forward);
-			Debug.DrawRay(transform.position, direction.normalized * distance, Color.red);
+			//Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+			//transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 1f);
+
+			if(player.GetComponent<PlayerControl>().sneaking == false) {
+				personalLastSighting = player.transform.position;
+			}
+
+			Debug.DrawRay(transform.position, dir.normalized * dist, Color.red);
+
 			if (angle < fieldOfView * 0.5f) {
 				RaycastHit hit;
 				Debug.Log("player in sight");
-				if (Physics.Raycast(transform.position, direction.normalized * distance, out hit, col.radius)) {
+				if (Physics.Raycast(transform.position, dir.normalized * dist, out hit, col.radius)) {
 					if (hit.collider.gameObject == player) {
+						transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir, Vector3.up), 0.1f);
 						playerInSight = true;
 						Debug.Log("player seen");
 						lastPlayerSighting.position = player.transform.position;

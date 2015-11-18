@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
 	public int money;
 	private ArrayList[] keyCodes;
 
+	public bool sneaking;
 	public GameObject bullet;
 	public GunType gun;
 
@@ -19,6 +20,7 @@ public class PlayerControl : MonoBehaviour
 	};
 
 	void Start() {
+		sneaking = false;
 		money = 0;
 		speed = 5f;
 		rb = gameObject.GetComponent<Rigidbody>();
