@@ -32,7 +32,7 @@ public class enemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (EnemySight.personalLastSighting != lastPlayerSighting.resetPosition) {
-			Chase();
+			Invoke("Chase", 1.5f);
 		} else {
 			Patrol();
 		}
