@@ -13,7 +13,7 @@ public class CameraLerpTo : MonoBehaviour {
 	}
 	
 	void Update () {
-		mainCamera.position = Vector3.Lerp(mainCamera.position, transform.position, 0.05f);
+		mainCamera.position = Vector3.Lerp(mainCamera.position, transform.position, 0.15f);
 
 		if (Input.GetKey(KeyCode.Mouse1)) {
 			moveVector.x = Input.GetAxis("Mouse X")/2f;
@@ -21,7 +21,7 @@ public class CameraLerpTo : MonoBehaviour {
 
 			transform.position += moveVector;
 		} else {
-			transform.position = Vector3.Lerp(transform.position, OrginalPos.position, 0.1f);
+			transform.position = Vector3.Lerp(transform.position, OrginalPos.position, 0.15f);
 		}
 		
 	}
