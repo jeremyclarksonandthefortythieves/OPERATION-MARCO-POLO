@@ -7,9 +7,11 @@ public class PlayerControl : MonoBehaviour
 	private float speed;
 	private Vector3 moveDirection;
 	private Rigidbody rb;
-	public int money;
 	private ArrayList[] keyCodes;
+	private bool controlsEnabled;
 
+	public bool hiding;
+	public int money;
 	public bool sneaking;
 	public GameObject bullet;
 	public GunType gun;
@@ -20,6 +22,8 @@ public class PlayerControl : MonoBehaviour
 	};
 
 	void Start() {
+		controlsEnabled = true;
+		hiding = false;
 		sneaking = false;
 		money = 0;
 		speed = 5f;
@@ -29,7 +33,7 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	void Update() {
-		Control();
+		if(controlsEnabled) Control();
 		InteractiveObject();
 	}
 
@@ -42,6 +46,16 @@ public class PlayerControl : MonoBehaviour
 		if (Input.GetKey(KeyCode.Alpha1)) gun = GunType.AssualtRifle;
 		if (Input.GetKey(KeyCode.Alpha2)) gun = GunType.Shotgun;
 		if (Input.GetKeyDown(KeyCode.Mouse0)) Shoot();
+		if (Input.GetKeyDown(KeyCode.LeftShift)) {
+			if (!sneaking) {
+				sneaking = true;
+				speed = 2f;
+			} else {
+				sneaking = false;
+				speed = 5f;
+			}
+		}
+
 
 
 		rb.velocity = moveDirection;
@@ -74,20 +88,44 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
+	void Hide(GameObject obj) {
+		controlsEnabled = false;
+		Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), obj.GetComponent<Collider>());
+        transform.position = obj.transform.position;
+		transform.rotation = obj.transform.rotation;
+	}
+
 	void InteractiveObject() {
-		//If and lootable object is in range. show it
+		//raycasts for objects if interactable
 		Vector3 forward = transform.TransformDirection(Vector3.forward);
 		RaycastHit hitInfo;
-		if (Physics.Raycast(transform.position, forward, out hitInfo, 0.5f)) {
-			if (hitInfo.collider.gameObject.tag == "LootAble") {
-				//for now it shows in the debug
-				Debug.Log("Press [E]");
-				if (Input.GetKey(KeyCode.E)) {
-					PropertyScript lootScript = hitInfo.collider.gameObject.GetComponent<PropertyScript>();
-					money = lootScript.getCoins();
-					Debug.Log("Looted");
-					hitInfo.collider.gameObject.tag = "Untagged";
-				}
+		if (Physics.Raycast(transform.position, forward, out hitInfo, 1f)) {
+			switch (hitInfo.collider.gameObject.tag) {
+				case "LootAble":
+					if (Input.GetKeyDown(KeyCode.E)) {
+						PropertyScript lootScript = hitInfo.collider.gameObject.GetComponent<PropertyScript>();
+						money = lootScript.getCoins();
+						Debug.Log("Looted");
+						hitInfo.collider.gameObject.tag = "Untagged";
+					}
+					break;
+				case "Password":
+					if (Input.GetKeyDown(KeyCode.E)) {
+						Debug.Log(hitInfo.collider.gameObject.GetComponent<PasswordScript>().GetPassword());
+					}
+					break;
+				case "LockedObject":
+					if (Input.GetKeyDown(KeyCode.E)) {
+						hitInfo.collider.gameObject.GetComponent<TerminalScript>().UseTerminal();
+					}
+				break;
+				case "HidingObject":
+					if (Input.GetKeyDown(KeyCode.E)) {
+						hiding = true;
+						Hide(hitInfo.collider.gameObject);
+					}
+				break;
+
 			}
 		}
 	}

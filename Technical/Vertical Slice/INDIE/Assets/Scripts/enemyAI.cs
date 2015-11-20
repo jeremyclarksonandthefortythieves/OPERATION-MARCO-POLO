@@ -42,22 +42,20 @@ public class enemyAI : MonoBehaviour {
 		navAgent.speed = patrolSpeed;
 
 		if (navAgent.remainingDistance < 0.5f || navAgent.destination == null) {
-			if(wayPoint < wayPoints.Length -1){
-				wayPoint++;
-			}else{
-				wayPoint = 0;
-			}
 			patrolTimer += Time.deltaTime;
 			if (patrolTimer > patrolWaitTime) {
-				
+				if (wayPoint < wayPoints.Length - 1) {
+					wayPoint += 1;
+				} else {
+					wayPoint = 0;
+				}
 				navAgent.destination = wayPoints[wayPoint].transform.position;
 				patrolTimer = 0f;
 			}
 		}
 	}
 
-	void Chase()
-	{
+	void Chase(){
 		Vector3 sightingDeltaPos = EnemySight.personalLastSighting - transform.position;
 		if (sightingDeltaPos.sqrMagnitude > 4f)
 			navAgent.destination = EnemySight.personalLastSighting;
