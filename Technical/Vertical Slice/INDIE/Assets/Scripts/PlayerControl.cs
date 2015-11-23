@@ -75,7 +75,7 @@ public class PlayerControl : MonoBehaviour
 		switch (gun) {
 			case GunType.AssualtRifle:
 				GameObject _bullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation) as GameObject;
-				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
+				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
 				break;
 
 			case GunType.Shotgun:
