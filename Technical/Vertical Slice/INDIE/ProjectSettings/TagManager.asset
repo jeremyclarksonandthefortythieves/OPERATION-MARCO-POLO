@@ -10,6 +10,8 @@ TagManager:
   - LockedObject
   - Password
   - HidingObject
+  - Bullet
+  - GunSound
   layers:
   - Default
   - TransparentFX

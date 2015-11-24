@@ -32,14 +32,15 @@ public class enemySight : MonoBehaviour
 			personalLastSighting = lastPlayerSighting.position;
 
 		previousSighting = lastPlayerSighting.position;
-		//	float dist = Vector3.Distance(transform.position, player.transform.position);
-		//Vector3 direction = player.transform.position - transform.position;
-		//	Debug.DrawRay(transform.position, direction.normalized * dist, Color.red);
+	}
+
+	void OnTriggerEnter(Collider coll) {
+		if(coll.gameObject.tag == "GunSound") {
+			personalLastSighting = player.transform.position;
+		}
 	}
 
 	void OnTriggerStay(Collider other) {
-
-
 		if (other.gameObject == player) {
 
 			playerInSight = false;
@@ -50,8 +51,6 @@ public class enemySight : MonoBehaviour
 			if (player.GetComponent<PlayerControl>().sneaking == false) {
 				personalLastSighting = player.transform.position;
 			}
-
-			Debug.DrawRay(transform.position, dir.normalized * dist, Color.red);
 
 			if (angle < fieldOfView * 0.5f) {
 				RaycastHit hit;
@@ -96,9 +95,7 @@ public class enemySight : MonoBehaviour
 
 		for (int i = 0; i < allWayPoints.Length - 1; i++) {
 			pathLength += Vector3.Distance(allWayPoints[i], allWayPoints[i + 1]);
-
 		}
-
 		return pathLength;
 	}
 }

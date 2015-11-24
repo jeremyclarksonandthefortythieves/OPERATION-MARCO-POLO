@@ -3,7 +3,7 @@ using System.Collections;
 
 public class enemyAI : MonoBehaviour {
 
-	public float chaseSpeed = 2.0f;
+	public float chaseSpeed = 4.0f;
 	public float patrolSpeed = 1.0f;
 	public float chaseWaitTime = 5f;
 	public GameObject[] wayPoints;

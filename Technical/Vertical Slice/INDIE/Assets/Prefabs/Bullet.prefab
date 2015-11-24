@@ -12,9 +12,10 @@ GameObject:
   - 135: {fileID: 13519716}
   - 23: {fileID: 2368906}
   - 54: {fileID: 5492412}
+  - 114: {fileID: 11408518}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +78,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &11408518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78c05ce935b61a4eae516b54ab82bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundTrig: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
 --- !u!135 &13519716
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -124,6 +137,14 @@ Prefab:
       propertyPath: m_UseLightProbes
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: soundTrig
+      value: 
+      objectReference: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145684}

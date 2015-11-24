@@ -34,19 +34,6 @@ public class TerminalScript : MonoBehaviour {
 		}
 	}
 
-	void Update() {
-		//raycasts if player walks away. then he destroys inputfield
-		if(active) {
-			Vector3 dir = player.transform.position - transform.position;
-			RaycastHit hit;
-			if (!Physics.Raycast(transform.position, dir, out hit, 1.2f)) {
-				Destroy(inputUI);
-				inputUI = null;
-				active = false;
-			}
-		}
-	}
-
 	public string GetPassword() {
 		return password[0].ToString() + password[1].ToString() + password[2].ToString();
 	}
@@ -62,6 +49,15 @@ public class TerminalScript : MonoBehaviour {
 
 		} else if(!locked && !active) {
 			Debug.Log("Unlocked");
+		}
+	}
+
+	void OnTriggerExit(Collider coll) {
+		if (active && coll.gameObject.tag == "Player") {
+			Debug.Log("player away from terminal");
+			Destroy(inputUI);
+			inputUI = null;
+			active = false;
 		}
 	}
 
