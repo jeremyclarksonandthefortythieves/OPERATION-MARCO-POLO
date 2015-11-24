@@ -9,16 +9,18 @@ public class PlayerControl : MonoBehaviour
 	private Rigidbody rb;
 	private ArrayList[] keyCodes;
 	private bool controlsEnabled;
+	private GameObject hidingObject;
 
 	public bool hiding;
 	public int money;
 	public bool sneaking;
+	public GameObject soundTrigger;
 	public GameObject bullet;
 	public GunType gun;
 
 	public enum GunType
 	{
-		AssualtRifle, Shotgun
+		Pistol, Shotgun
 	};
 
 	void Start() {
@@ -29,10 +31,19 @@ public class PlayerControl : MonoBehaviour
 		speed = 5f;
 		rb = gameObject.GetComponent<Rigidbody>();
 		moveDirection = new Vector3(0, 0, 0);
-		gun = GunType.AssualtRifle;
+		gun = GunType.Pistol;
 	}
 
 	void Update() {
+		if (!controlsEnabled)
+			if (Input.GetKeyDown(KeyCode.E)) {
+				hiding = false;
+				controlsEnabled = true;
+				transform.position += hidingObject.transform.forward;
+				hidingObject = null;
+
+			}
+
 		if(controlsEnabled) Control();
 		InteractiveObject();
 	}
@@ -43,7 +54,7 @@ public class PlayerControl : MonoBehaviour
 		if (Input.GetKey(KeyCode.S)) moveDirection.z = -1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
-		if (Input.GetKey(KeyCode.Alpha1)) gun = GunType.AssualtRifle;
+		if (Input.GetKey(KeyCode.Alpha1)) gun = GunType.Pistol;
 		if (Input.GetKey(KeyCode.Alpha2)) gun = GunType.Shotgun;
 		if (Input.GetKeyDown(KeyCode.Mouse0)) Shoot();
 		if (Input.GetKeyDown(KeyCode.LeftShift)) {
@@ -73,18 +84,22 @@ public class PlayerControl : MonoBehaviour
 
 	void Shoot() {
 		switch (gun) {
-			case GunType.AssualtRifle:
+			case GunType.Pistol:
 				GameObject _bullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation) as GameObject;
 				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
+				_bullet.GetComponent<BulletScript>().shotFromPlayer = true;
+
+				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
+				soundTrig.GetComponent<SphereCollider>().radius = 5f;
 				break;
 
-			case GunType.Shotgun:
+			/*case GunType.Shotgun:
 				GameObject[] bullets = new GameObject[4];
 				for (int i = 0; i < bullets.Length; i++) {
 					bullets[i] = Instantiate(bullet, transform.position + transform.forward + (transform.right * ((i - 2f) / 5f)), transform.rotation) as GameObject;
 					bullets[i].GetComponent<Rigidbody>().AddForce((transform.forward * 500f) + (transform.right * ((i - 1.5f) * 20f)));
 				}
-				break;
+				break;*/
 		}
 	}
 
@@ -95,10 +110,42 @@ public class PlayerControl : MonoBehaviour
 		transform.rotation = obj.transform.rotation;
 	}
 
+	/*void OnTriggerStay(Collider coll) {
+		switch (coll.gameObject.tag) {
+			case "LootAble":
+				if (Input.GetKeyDown(KeyCode.E)) {
+					PropertyScript lootScript = coll.GetComponent<Collider>().gameObject.GetComponent<PropertyScript>();
+					money = lootScript.getCoins();
+					Debug.Log("Looted");
+					coll.GetComponent<Collider>().gameObject.tag = "Untagged";
+				}
+				break;
+			case "Password":
+				if (Input.GetKeyDown(KeyCode.E)) {
+					Debug.Log(coll.GetComponent<Collider>().gameObject.GetComponent<PasswordScript>().GetPassword());
+				}
+				break;
+			case "LockedObject":
+				if (Input.GetKeyDown(KeyCode.E)) {
+					coll.GetComponent<Collider>().gameObject.GetComponent<TerminalScript>().UseTerminal();
+				}
+				break;
+			case "HidingObject":
+				if (Input.GetKeyDown(KeyCode.E)) {
+					hidingObject = coll.gameObject;
+					hiding = true;
+					controlsEnabled = false;
+					Hide(coll.GetComponent<Collider>().gameObject);
+				}
+				break;
+		}
+	}*/
+
 	void InteractiveObject() {
 		//raycasts for objects if interactable
 		Vector3 forward = transform.TransformDirection(Vector3.forward);
 		RaycastHit hitInfo;
+		Debug.DrawRay(transform.position, forward);
 		if (Physics.Raycast(transform.position, forward, out hitInfo, 1f)) {
 			switch (hitInfo.collider.gameObject.tag) {
 				case "LootAble":
@@ -121,7 +168,9 @@ public class PlayerControl : MonoBehaviour
 				break;
 				case "HidingObject":
 					if (Input.GetKeyDown(KeyCode.E)) {
+						hidingObject = hitInfo.collider.gameObject;
 						hiding = true;
+						controlsEnabled = false;
 						Hide(hitInfo.collider.gameObject);
 					}
 				break;

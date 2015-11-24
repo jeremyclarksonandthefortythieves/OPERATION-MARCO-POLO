@@ -7959,6 +7959,7 @@ MonoBehaviour:
   hiding: 0
   money: 0
   sneaking: 0
+  soundTrigger: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
   bullet: {fileID: 145684, guid: 3800710bebe8cf743845d25c3fb6e058, type: 2}
   gun: 0
 --- !u!1 &1176225181
@@ -12674,6 +12675,7 @@ GameObject:
   - 195: {fileID: 2004902244}
   - 135: {fileID: 2004902250}
   - 54: {fileID: 2004902251}
+  - 114: {fileID: 2004902252}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -12739,7 +12741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b666aeb1850d3824b85eb0a7b2f17604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 2
+  chaseSpeed: 4
   patrolSpeed: 1
   chaseWaitTime: 5
   wayPoints:
@@ -12823,6 +12825,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2004902252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004902242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eabfcc370f4a864c97466612aa3dbe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 145684, guid: 3800710bebe8cf743845d25c3fb6e058, type: 2}
 --- !u!1 &2018130600
 GameObject:
   m_ObjectHideFlags: 0

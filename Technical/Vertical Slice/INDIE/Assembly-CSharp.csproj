@@ -45,14 +45,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\CameraLerpTo.cs" />
-     <Compile Include="Assets\Scripts\HidingObject.cs" />
      <Compile Include="Assets\Scripts\LastPlayerSighting.cs" />
+     <Compile Include="Assets\Scripts\LoadSaveScript.cs" />
      <Compile Include="Assets\Scripts\PasswordScript.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PropertyScript.cs" />
+     <Compile Include="Assets\Scripts\SaveData.cs" />
+     <Compile Include="Assets\Scripts\SoundTriggerScript.cs" />
      <Compile Include="Assets\Scripts\TerminalScript.cs" />
      <Compile Include="Assets\Scripts\enemyAI.cs" />
+     <Compile Include="Assets\Scripts\enemyShooting.cs" />
      <Compile Include="Assets\Scripts\enemySight.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
