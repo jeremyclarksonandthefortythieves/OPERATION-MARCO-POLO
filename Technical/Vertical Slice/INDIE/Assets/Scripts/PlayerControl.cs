@@ -39,9 +39,9 @@ public class PlayerControl : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.E)) {
 				hiding = false;
 				controlsEnabled = true;
-				transform.position += hidingObject.transform.forward;
+				gameObject.GetComponent<MeshRenderer>().enabled = true;
+				//transform.position += hidingObject.transform.forward;
 				hidingObject = null;
-
 			}
 
 		if(controlsEnabled) Control();
@@ -105,9 +105,10 @@ public class PlayerControl : MonoBehaviour
 
 	void Hide(GameObject obj) {
 		controlsEnabled = false;
-		Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), obj.GetComponent<Collider>());
+		gameObject.GetComponent<MeshRenderer>().enabled = false;
+		/*Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), obj.GetComponent<Collider>());
         transform.position = obj.transform.position;
-		transform.rotation = obj.transform.rotation;
+		transform.rotation = obj.transform.rotation;*/
 	}
 
 	/*void OnTriggerStay(Collider coll) {
@@ -167,7 +168,7 @@ public class PlayerControl : MonoBehaviour
 					}
 				break;
 				case "HidingObject":
-					if (Input.GetKeyDown(KeyCode.E)) {
+					if (Input.GetKeyDown(KeyCode.E) && !hiding) {
 						hidingObject = hitInfo.collider.gameObject;
 						hiding = true;
 						controlsEnabled = false;

@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PropertyScript.cs" />
      <Compile Include="Assets\Scripts\SaveData.cs" />
+     <Compile Include="Assets\Scripts\SecurityCameraScript.cs" />
      <Compile Include="Assets\Scripts\SoundTriggerScript.cs" />
      <Compile Include="Assets\Scripts\TerminalScript.cs" />
      <Compile Include="Assets\Scripts\enemyAI.cs" />

@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: e1a452e1efe767f4e9a6a8763c80f662
-timeCreated: 1448028873
+guid: 8ede4eb2e147fc74b93abdc49f068421
+timeCreated: 1448360542
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: initialShadingGroup_chair1:obj1
+    100002: locker:obj1
     400000: //RootNode
-    400002: initialShadingGroup_chair1:obj1
-    2300000: initialShadingGroup_chair1:obj1
-    3300000: initialShadingGroup_chair1:obj1
-    4300000: initialShadingGroup_chair1:obj1
+    400002: locker:obj1
+    2300000: locker:obj1
+    3300000: locker:obj1
+    4300000: locker:obj1
   materials:
     importMaterials: 1
     materialName: 0
