@@ -572,7 +572,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  linkedDoor: {fileID: 799463106}
   codeInput: {fileID: 188772, guid: d74ef2855fe0ec645a3438740a572609, type: 2}
+  openDoorButton: {fileID: 183708, guid: a1db072dfe406f34abcb6898e8262df3, type: 2}
   _canvas: {fileID: 1649324264}
 --- !u!65 &354473158
 BoxCollider:
@@ -2838,6 +2840,10 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 11468008, guid: 50efa5a8e3ed66946bd9d0e8803b354a, type: 2}
+      propertyPath: soundTrigger
+      value: 
+      objectReference: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50efa5a8e3ed66946bd9d0e8803b354a, type: 2}
   m_IsPrefabParent: 0

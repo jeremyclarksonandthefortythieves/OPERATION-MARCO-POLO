@@ -10,13 +10,15 @@ public class TerminalScript : MonoBehaviour {
 	private int[] password = new int[3];
 	private GameObject[] passwordObjects;
 	private bool locked;
-	private GameObject inputUI = null;
+	private GameObject terminalUI;
 	private bool active = false;
 	private GameObject player;
-
+	private bool opened = false;
 
 	public int id;
+	public GameObject linkedDoor;
 	public GameObject codeInput;
+	public GameObject openDoorButton;
 	public GameObject _canvas;
 
 	void Start() {
@@ -40,33 +42,44 @@ public class TerminalScript : MonoBehaviour {
 
 	public void UseTerminal() {
 
-		if (locked && inputUI == null && !active) {
+		if (locked && !active) {
 			Debug.Log(GetPassword());
 			active = true;
-			inputUI = Instantiate(codeInput) as GameObject;
-			inputUI.transform.SetParent(_canvas.transform, false);
-			inputUI.GetComponent<InputField>().onEndEdit.AddListener(delegate { EnterPassword(inputUI.GetComponent<InputField>().text); });
-
-		} else if(!locked && !active) {
-			Debug.Log("Unlocked");
+			terminalUI = Instantiate(codeInput) as GameObject;
+			terminalUI.transform.SetParent(_canvas.transform, false);
+			terminalUI.GetComponent<InputField>().onEndEdit.AddListener(delegate { EnterPassword(terminalUI.GetComponent<InputField>().text); });
+		} else if(!locked && !active && !opened) {
+			active = true;
+			terminalUI = Instantiate(openDoorButton) as GameObject;
+			terminalUI.transform.SetParent(_canvas.transform, false);
+			terminalUI.GetComponent<Button>().onClick.AddListener(delegate { OpenDoor(); });
 		}
 	}
 
 	void OnTriggerExit(Collider coll) {
 		if (active && coll.gameObject.tag == "Player") {
 			Debug.Log("player away from terminal");
-			Destroy(inputUI);
-			inputUI = null;
+			Destroy(terminalUI);
+			terminalUI = null;
 			active = false;
 		}
+	}
+
+	public void OpenDoor() {
+		locked = false;
+		active = false;
+		Destroy(terminalUI);
+		Destroy(linkedDoor);
+		opened = true;
 	}
 
 	public void EnterPassword(string s) {
 		if (s == GetPassword()) {
 			Debug.Log("Good pass");
 			locked = false;
-			Destroy(inputUI);
-			inputUI = null;
+			active = false;
+			Destroy(terminalUI);
+			UseTerminal();
 		} else {
 			Debug.Log("Wrong Password");
 		}

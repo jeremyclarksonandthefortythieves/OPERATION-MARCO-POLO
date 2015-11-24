@@ -13,7 +13,7 @@ PlayerSettings:
   companyName: DefaultCompany
   productName: INDIE
   defaultCursor: {fileID: 2800000, guid: 8d2e456dbb3638b488b6f737aac69fde, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 200, y: 217}
   m_ShowUnitySplashScreen: 1
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
