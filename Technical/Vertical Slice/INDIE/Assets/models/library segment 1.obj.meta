@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: c2849c410b9d5e7439bc0b7326e4e070
-timeCreated: 1448019626
+guid: 0c56f8ed06e61844e9bc25e706547303
+timeCreated: 1448370551
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: initialShadingGroup_monitor:obj2
-    100002: //RootNode
-    400000: initialShadingGroup_monitor:obj2
-    400002: //RootNode
-    2300000: initialShadingGroup_monitor:obj2
-    3300000: initialShadingGroup_monitor:obj2
-    4300000: initialShadingGroup_monitor:obj2
+    100000: //RootNode
+    100002: library_segment:obj1
+    400000: //RootNode
+    400002: library_segment:obj1
+    2300000: library_segment:obj1
+    3300000: library_segment:obj1
+    4300000: library_segment:obj1
   materials:
     importMaterials: 1
     materialName: 0

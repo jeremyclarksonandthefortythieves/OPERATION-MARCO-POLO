@@ -41,7 +41,6 @@ public class TerminalScript : MonoBehaviour {
 	}
 
 	public void UseTerminal() {
-
 		if (locked && !active) {
 			Debug.Log(GetPassword());
 			active = true;

@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour
 	private Vector3 moveDirection;
 	private Rigidbody rb;
 	private ArrayList[] keyCodes;
-	private bool controlsEnabled;
+	public bool controlsEnabled;
 	private GameObject hidingObject;
 
 	public bool hiding;
@@ -35,6 +35,8 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	void Update() {
+		
+
 		if (!controlsEnabled)
 			if (Input.GetKeyDown(KeyCode.E)) {
 				hiding = false;
@@ -44,8 +46,10 @@ public class PlayerControl : MonoBehaviour
 				hidingObject = null;
 			}
 
-		if(controlsEnabled) Control();
-		InteractiveObject();
+		if (controlsEnabled) {
+			Control();
+			InteractiveObject();
+		}
 	}
 
 	void Control() {
@@ -82,6 +86,7 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
+
 	void Shoot() {
 		switch (gun) {
 			case GunType.Pistol:
@@ -110,37 +115,7 @@ public class PlayerControl : MonoBehaviour
         transform.position = obj.transform.position;
 		transform.rotation = obj.transform.rotation;*/
 	}
-
-	/*void OnTriggerStay(Collider coll) {
-		switch (coll.gameObject.tag) {
-			case "LootAble":
-				if (Input.GetKeyDown(KeyCode.E)) {
-					PropertyScript lootScript = coll.GetComponent<Collider>().gameObject.GetComponent<PropertyScript>();
-					money = lootScript.getCoins();
-					Debug.Log("Looted");
-					coll.GetComponent<Collider>().gameObject.tag = "Untagged";
-				}
-				break;
-			case "Password":
-				if (Input.GetKeyDown(KeyCode.E)) {
-					Debug.Log(coll.GetComponent<Collider>().gameObject.GetComponent<PasswordScript>().GetPassword());
-				}
-				break;
-			case "LockedObject":
-				if (Input.GetKeyDown(KeyCode.E)) {
-					coll.GetComponent<Collider>().gameObject.GetComponent<TerminalScript>().UseTerminal();
-				}
-				break;
-			case "HidingObject":
-				if (Input.GetKeyDown(KeyCode.E)) {
-					hidingObject = coll.gameObject;
-					hiding = true;
-					controlsEnabled = false;
-					Hide(coll.GetComponent<Collider>().gameObject);
-				}
-				break;
-		}
-	}*/
+			
 
 	void InteractiveObject() {
 		//raycasts for objects if interactable
@@ -159,7 +134,7 @@ public class PlayerControl : MonoBehaviour
 					break;
 				case "Password":
 					if (Input.GetKeyDown(KeyCode.E)) {
-						Debug.Log(hitInfo.collider.gameObject.GetComponent<PasswordScript>().GetPassword());
+						hitInfo.collider.gameObject.GetComponent<PasswordScript>().GetPassword();
 					}
 					break;
 				case "LockedObject":
