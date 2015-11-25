@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CameraLerpTo.cs" />
      <Compile Include="Assets\Scripts\LastPlayerSighting.cs" />
      <Compile Include="Assets\Scripts\LoadSaveScript.cs" />
+     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\PasswordScript.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PropertyScript.cs" />

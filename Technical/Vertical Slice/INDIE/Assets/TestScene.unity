@@ -2901,7 +2901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1061cf10ac072bc49ab1a313ebedcfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 0}
   id: 0
+  passwordImage: {fileID: 0}
 --- !u!1 &465583860
 GameObject:
   m_ObjectHideFlags: 0
@@ -4905,7 +4907,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  linkedDoor: {fileID: 0}
   codeInput: {fileID: 188772, guid: d74ef2855fe0ec645a3438740a572609, type: 2}
+  openDoorButton: {fileID: 0}
   _canvas: {fileID: 1033354795}
 --- !u!1 &770399393
 GameObject:
@@ -7956,6 +7960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429ded1571aa8864893492bc338c6a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlsEnabled: 0
   hiding: 0
   money: 0
   sneaking: 0
@@ -12730,6 +12735,7 @@ MonoBehaviour:
   fieldOfView: 150
   playerInSight: 0
   personalLastSighting: {x: 0, y: 0, z: 0}
+  canShoot: 0
 --- !u!114 &2004902246
 MonoBehaviour:
   m_ObjectHideFlags: 0

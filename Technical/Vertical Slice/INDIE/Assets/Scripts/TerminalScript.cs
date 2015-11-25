@@ -36,6 +36,20 @@ public class TerminalScript : MonoBehaviour {
 		}
 	}
 
+	void Update() {
+
+		if (active) {
+			if (Input.GetKeyDown(KeyCode.E)) {
+				Destroy(terminalUI);
+				Destroy(terminalUI);
+				terminalUI = null;
+				player.GetComponent<PlayerControl>().controlsEnabled = true;
+				active = false;
+
+			}
+		}
+	}
+
 	public string GetPassword() {
 		return password[0].ToString() + password[1].ToString() + password[2].ToString();
 	}
@@ -47,20 +61,15 @@ public class TerminalScript : MonoBehaviour {
 			terminalUI = Instantiate(codeInput) as GameObject;
 			terminalUI.transform.SetParent(_canvas.transform, false);
 			terminalUI.GetComponent<InputField>().onEndEdit.AddListener(delegate { EnterPassword(terminalUI.GetComponent<InputField>().text); });
+			player.GetComponent<PlayerControl>().controlsEnabled = false;
+
 		} else if(!locked && !active && !opened) {
 			active = true;
 			terminalUI = Instantiate(openDoorButton) as GameObject;
 			terminalUI.transform.SetParent(_canvas.transform, false);
 			terminalUI.GetComponent<Button>().onClick.AddListener(delegate { OpenDoor(); });
-		}
-	}
+			player.GetComponent<PlayerControl>().controlsEnabled = false;
 
-	void OnTriggerExit(Collider coll) {
-		if (active && coll.gameObject.tag == "Player") {
-			Debug.Log("player away from terminal");
-			Destroy(terminalUI);
-			terminalUI = null;
-			active = false;
 		}
 	}
 
