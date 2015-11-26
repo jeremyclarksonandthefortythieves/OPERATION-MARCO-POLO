@@ -25,6 +25,8 @@ public class LoadSaveScript : MonoBehaviour {
 
 
 	public void NewGame() {
+		if(File.Exists(url + fileName)) File.Delete(url + fileName);
+
 		saveData.money = 0;
 		saveData.currentLevel = 1;
 
@@ -57,10 +59,6 @@ public class LoadSaveScript : MonoBehaviour {
 			saveData = (SaveData)bf.Deserialize(file);
 			file.Close();
 		}
-	}
-
-	public void Delete() {
-		File.Delete(url + fileName);
 	}
 
 	public void LoadSkillStats() {
