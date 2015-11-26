@@ -12,6 +12,7 @@ TagManager:
   - HidingObject
   - Bullet
   - GunSound
+  - Enemy
   layers:
   - Default
   - TransparentFX
