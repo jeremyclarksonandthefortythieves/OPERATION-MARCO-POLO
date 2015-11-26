@@ -34,7 +34,7 @@ public class PlayerControl : MonoBehaviour
 		gun = GunType.Pistol;
 	}
 
-	void Update() {
+	void FixedUpdate() {
 		
 
 		if (!controlsEnabled)
