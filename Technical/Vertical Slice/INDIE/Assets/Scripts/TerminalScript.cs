@@ -55,6 +55,7 @@ public class TerminalScript : MonoBehaviour {
 	}
 
 	public void UseTerminal() {
+		Debug.Log("Use terminal");
 		if (locked && !active) {
 			Debug.Log(GetPassword());
 			active = true;

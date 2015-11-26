@@ -18,8 +18,7 @@ public class PlayerControl : MonoBehaviour
 	public GameObject bullet;
 	public GunType gun;
 
-	public enum GunType
-	{
+	public enum GunType {
 		Pistol, Shotgun
 	};
 
@@ -35,9 +34,11 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	void FixedUpdate() {
-		
-
-		if (!controlsEnabled)
+		if (controlsEnabled) {
+			Control();
+			InteractiveObject();
+		} else {
+			Debug.Log("no controls");
 			if (Input.GetKeyDown(KeyCode.E)) {
 				hiding = false;
 				controlsEnabled = true;
@@ -45,10 +46,6 @@ public class PlayerControl : MonoBehaviour
 				//transform.position += hidingObject.transform.forward;
 				hidingObject = null;
 			}
-
-		if (controlsEnabled) {
-			Control();
-			InteractiveObject();
 		}
 	}
 
@@ -111,9 +108,6 @@ public class PlayerControl : MonoBehaviour
 	void Hide(GameObject obj) {
 		controlsEnabled = false;
 		gameObject.GetComponent<MeshRenderer>().enabled = false;
-		/*Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), obj.GetComponent<Collider>());
-        transform.position = obj.transform.position;
-		transform.rotation = obj.transform.rotation;*/
 	}
 			
 
@@ -123,9 +117,10 @@ public class PlayerControl : MonoBehaviour
 		RaycastHit hitInfo;
 		Debug.DrawRay(transform.position, forward);
 		if (Physics.Raycast(transform.position, forward, out hitInfo, 1f)) {
+			Debug.Log(hitInfo.collider.gameObject.tag);
 			switch (hitInfo.collider.gameObject.tag) {
 				case "LootAble":
-					if (Input.GetKeyDown(KeyCode.E)) {
+					if (Input.GetKey(KeyCode.E)) {
 						PropertyScript lootScript = hitInfo.collider.gameObject.GetComponent<PropertyScript>();
 						money = lootScript.getCoins();
 						Debug.Log("Looted");
@@ -133,17 +128,21 @@ public class PlayerControl : MonoBehaviour
 					}
 					break;
 				case "Password":
-					if (Input.GetKeyDown(KeyCode.E)) {
+					if (Input.GetKey(KeyCode.E)) {
+						controlsEnabled = false;
+
 						hitInfo.collider.gameObject.GetComponent<PasswordScript>().GetPassword();
 					}
 					break;
 				case "LockedObject":
-					if (Input.GetKeyDown(KeyCode.E)) {
+					if (Input.GetKey(KeyCode.E)) {
+						controlsEnabled = false;
+
 						hitInfo.collider.gameObject.GetComponent<TerminalScript>().UseTerminal();
 					}
 				break;
 				case "HidingObject":
-					if (Input.GetKeyDown(KeyCode.E) && !hiding) {
+					if (Input.GetKey(KeyCode.E) && !hiding) {
 						hidingObject = hitInfo.collider.gameObject;
 						hiding = true;
 						controlsEnabled = false;
