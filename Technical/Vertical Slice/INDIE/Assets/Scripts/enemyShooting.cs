@@ -33,8 +33,13 @@ public class enemyShooting : MonoBehaviour {
             allowFire = true;
            
         }
+        else
+            allowFire = false;
+
+
         if (sight.canShoot && allowFire)
             ShootAI();
+        
            
         
     }
@@ -46,7 +51,7 @@ public class enemyShooting : MonoBehaviour {
         float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.position)) / col.radius;
 
             GameObject _bullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation) as GameObject;
-            _bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
+            _bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
             allowFire = false;
             rateofFire = 1.5f;
             
