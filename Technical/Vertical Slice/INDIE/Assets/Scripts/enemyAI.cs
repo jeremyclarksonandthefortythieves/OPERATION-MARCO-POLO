@@ -11,6 +11,7 @@ public class enemyAI : MonoBehaviour {
 
 	private int wayPoint;
 	private enemySight EnemySight;
+    private enemyShooting Shooting;
 	private Transform player;
 	private NavMeshAgent navAgent;
 	private LastPlayerSighting lastPlayerSighting;
@@ -36,6 +37,7 @@ public class enemyAI : MonoBehaviour {
 		} else {
 			Patrol();
 		}
+
 	}
 
 	void Patrol() {
@@ -59,10 +61,10 @@ public class enemyAI : MonoBehaviour {
 		Vector3 sightingDeltaPos = EnemySight.personalLastSighting - transform.position;
 		if (sightingDeltaPos.sqrMagnitude > 4f)
 			navAgent.destination = EnemySight.personalLastSighting;
-		
-		navAgent.speed = chaseSpeed;
 
-		if (navAgent.remainingDistance < navAgent.stoppingDistance) {
+            navAgent.speed = chaseSpeed;
+
+        if (navAgent.remainingDistance < navAgent.stoppingDistance) {
 			ChaseTimer += Time.deltaTime;
 
 			if (ChaseTimer >= chaseWaitTime) {

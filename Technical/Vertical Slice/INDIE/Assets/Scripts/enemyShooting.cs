@@ -9,7 +9,7 @@ public class enemyShooting : MonoBehaviour {
     private Transform player;
     private bool shooting;
     private enemySight sight;
-    private bool allowFire = false;
+    public bool allowFire = false;
     private float rateofFire = 1.5f;
 
 
