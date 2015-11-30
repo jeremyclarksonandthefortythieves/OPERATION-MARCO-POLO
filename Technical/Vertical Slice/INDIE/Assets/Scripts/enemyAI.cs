@@ -79,4 +79,5 @@ public class enemyAI : MonoBehaviour {
 			ChaseTimer = 0;
 
 	}
+
 }
