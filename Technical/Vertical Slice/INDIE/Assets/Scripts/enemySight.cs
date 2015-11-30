@@ -7,7 +7,7 @@ public class enemySight : MonoBehaviour
 	public float fieldOfView = 110f;
 	public bool playerInSight;
 	public Vector3 personalLastSighting;
-    public bool canShoot = false;
+    public bool allowFire = false;
 
 	private NavMeshAgent navAgent;
 	private SphereCollider col;
@@ -44,7 +44,9 @@ public class enemySight : MonoBehaviour
 		if (other.gameObject == player) {
 
 			playerInSight = false;
-			float dist = Vector3.Distance(transform.position, player.transform.position);
+            allowFire = false;
+
+            float dist = Vector3.Distance(transform.position, player.transform.position);
 			Vector3 dir = player.transform.position - transform.position;
 			float angle = Vector3.Angle(dir.normalized * dist, transform.forward);
 
@@ -57,13 +59,12 @@ public class enemySight : MonoBehaviour
 				if (Physics.Raycast(transform.position, dir.normalized * dist, out hit, col.radius)) {
                     if (hit.collider.gameObject == player)
                     {
-                        canShoot = true;
+                        allowFire = true;
                         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir, Vector3.up), 0.1f);
                         playerInSight = true;
                         lastPlayerSighting.position = player.transform.position;
                     }
-                    else
-                        canShoot = false;
+                        
 				}
 			}
 		}

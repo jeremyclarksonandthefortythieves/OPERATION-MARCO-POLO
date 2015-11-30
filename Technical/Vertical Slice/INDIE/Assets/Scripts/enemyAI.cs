@@ -42,6 +42,7 @@ public class enemyAI : MonoBehaviour {
 
 	void Patrol() {
 		navAgent.speed = patrolSpeed;
+        navAgent.stoppingDistance = 0.5f;
 
 		if (navAgent.remainingDistance < 0.5f || navAgent.destination == null) {
 			patrolTimer += Time.deltaTime;
@@ -62,6 +63,7 @@ public class enemyAI : MonoBehaviour {
 		if (sightingDeltaPos.sqrMagnitude > 4f)
 			navAgent.destination = EnemySight.personalLastSighting;
 
+            navAgent.stoppingDistance = 3;
             navAgent.speed = chaseSpeed;
 
         if (navAgent.remainingDistance < navAgent.stoppingDistance) {

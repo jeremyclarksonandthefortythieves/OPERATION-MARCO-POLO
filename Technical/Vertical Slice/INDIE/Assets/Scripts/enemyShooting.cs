@@ -9,7 +9,7 @@ public class enemyShooting : MonoBehaviour {
     private Transform player;
     private bool shooting;
     private enemySight sight;
-    public bool allowFire = false;
+    public bool canShoot = false;
     private float rateofFire = 1.5f;
 
 
@@ -30,14 +30,14 @@ public class enemyShooting : MonoBehaviour {
         rateofFire -= Time.deltaTime;
         if(rateofFire <= 0)
         {
-            allowFire = true;
+            canShoot = true;
            
         }
         else
-            allowFire = false;
+            canShoot = false;
 
 
-        if (sight.canShoot && allowFire)
+        if (sight.allowFire && canShoot)
             ShootAI();
         
            
@@ -45,14 +45,13 @@ public class enemyShooting : MonoBehaviour {
     }
 
     public void ShootAI()
-    {
-        shooting = true;
+    { 
         
         float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.position)) / col.radius;
 
             GameObject _bullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation) as GameObject;
             _bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
-            allowFire = false;
+            canShoot = false;
             rateofFire = 1.5f;
             
     }
