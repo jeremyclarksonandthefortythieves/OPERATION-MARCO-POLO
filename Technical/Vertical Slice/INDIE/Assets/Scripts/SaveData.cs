@@ -9,6 +9,7 @@ public class SaveData
 	public static SaveData current;
 
 	public int money;
+	public int exp;
 
 	public int currentLevel;
 }

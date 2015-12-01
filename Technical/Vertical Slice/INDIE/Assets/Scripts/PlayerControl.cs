@@ -10,19 +10,20 @@ public class PlayerControl : MonoBehaviour
 	private ArrayList[] keyCodes;
 	public bool controlsEnabled;
 	private GameObject hidingObject;
+	private GameObject gameController;
 
-	public bool hiding;
+	public int exp;
+	public GameObject walkieTalkie;
+    public bool hiding;
 	public int money;
 	public bool sneaking;
 	public GameObject soundTrigger;
 	public GameObject bullet;
-	public GunType gun;
-
-	public enum GunType {
-		Pistol, Shotgun
-	};
+	public GameObject smokeGrenade;
+	public GameObject distractionMine;
 
 	void Start() {
+		gameController = GameObject.FindGameObjectWithTag("GameController");
 		controlsEnabled = true;
 		hiding = false;
 		sneaking = false;
@@ -30,7 +31,6 @@ public class PlayerControl : MonoBehaviour
 		speed = 5f;
 		rb = gameObject.GetComponent<Rigidbody>();
 		moveDirection = new Vector3(0, 0, 0);
-		gun = GunType.Pistol;
 	}
 
 	void FixedUpdate() {
@@ -55,9 +55,9 @@ public class PlayerControl : MonoBehaviour
 		if (Input.GetKey(KeyCode.S)) moveDirection.z = -1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
-		if (Input.GetKey(KeyCode.Alpha1)) gun = GunType.Pistol;
-		if (Input.GetKey(KeyCode.Alpha2)) gun = GunType.Shotgun;
-		if (Input.GetKeyDown(KeyCode.Mouse0)) Shoot();
+		if (Input.GetKeyDown(KeyCode.Alpha1)) Shoot("smoke");
+		if (Input.GetKeyDown(KeyCode.Alpha2)) Shoot("distraction");
+		if (Input.GetKeyDown(KeyCode.Mouse0)) Shoot("bullet");
 		if (Input.GetKeyDown(KeyCode.LeftShift)) {
 			if (!sneaking) {
 				sneaking = true;
@@ -84,24 +84,25 @@ public class PlayerControl : MonoBehaviour
 	}
 
 
-	void Shoot() {
-		switch (gun) {
-			case GunType.Pistol:
-				GameObject _bullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation) as GameObject;
-				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
+	void Shoot(string type) {
+		switch (type) {
+			case "bullet":
+				GameObject _bullet = Instantiate(bullet, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
+				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
 				_bullet.GetComponent<BulletScript>().shotFromPlayer = true;
 
 				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
 				soundTrig.GetComponent<SphereCollider>().radius = 5f;
 				break;
+			case "smoke":
 
-			/*case GunType.Shotgun:
-				GameObject[] bullets = new GameObject[4];
-				for (int i = 0; i < bullets.Length; i++) {
-					bullets[i] = Instantiate(bullet, transform.position + transform.forward + (transform.right * ((i - 2f) / 5f)), transform.rotation) as GameObject;
-					bullets[i].GetComponent<Rigidbody>().AddForce((transform.forward * 500f) + (transform.right * ((i - 1.5f) * 20f)));
-				}
-				break;*/
+				break;
+
+			case "distraction":
+				GameObject disMine = Instantiate(distractionMine, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
+				disMine.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
+				break;
+
 		}
 	}
 
@@ -110,6 +111,22 @@ public class PlayerControl : MonoBehaviour
 		gameObject.GetComponent<MeshRenderer>().enabled = false;
 	}
 			
+	public void GetExp() {
+		exp += 1;
+		if (exp >= 2) {
+			exp = 0;
+			money += 1;
+		}
+
+	}
+
+	void OnTriggerEnter(Collider coll) {
+		if(coll.gameObject.tag == "SoundTrigger") {
+			GameObject wT = Instantiate(walkieTalkie);
+			Destroy(wT, coll.GetComponent<AudioSource>().clip.length);
+
+		}
+	}
 
 	void InteractiveObject() {
 		//raycasts for objects if interactable
@@ -149,6 +166,12 @@ public class PlayerControl : MonoBehaviour
 						Hide(hitInfo.collider.gameObject);
 					}
 				break;
+				case "CompleteLevel":
+					if (Input.GetKey(KeyCode.E)) {
+						gameController.GetComponent<LevelController>().CompleteLevel();
+
+					}
+					break;
 
 			}
 		}

@@ -28,6 +28,7 @@ public class LoadSaveScript : MonoBehaviour {
 		if(File.Exists(url + fileName)) File.Delete(url + fileName);
 
 		saveData.money = 0;
+		saveData.exp = 0;
 		saveData.currentLevel = 1;
 
 		createFolder(url);
@@ -42,6 +43,7 @@ public class LoadSaveScript : MonoBehaviour {
 		PlayerControl player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 
 		saveData.money = player.money;
+		saveData.exp = player.exp;
 		saveData.currentLevel = Application.loadedLevel;
 
 

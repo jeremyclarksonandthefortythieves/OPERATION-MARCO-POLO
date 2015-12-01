@@ -51,11 +51,17 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -78,6 +84,7 @@
     <Compile Include="Assets\Scripts\CameraLerpTo.cs" />
     <Compile Include="Assets\Scripts\HUDscript.cs" />
     <Compile Include="Assets\Scripts\LastPlayerSighting.cs" />
+    <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\LoadSaveScript.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\PasswordScript.cs" />
@@ -91,10 +98,10 @@
     <Compile Include="Assets\Scripts\enemyShooting.cs" />
     <Compile Include="Assets\Scripts\enemySight.cs" />
     <Compile Include="Assets\Scripts\pauseMenuScript.cs" />
-    <Compile Include="Assets\Scripts\tokenScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Prefabs\Shader\TF2.shader" />
+    <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
