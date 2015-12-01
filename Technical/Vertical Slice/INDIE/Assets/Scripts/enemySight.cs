@@ -28,7 +28,8 @@ public class enemySight : MonoBehaviour
 
 	// Update is called once per frame
 	void Update() {
-		if (lastPlayerSighting.position != previousSighting)
+        // personalLastSigting is AI's personal location of player and lastPlayerSighting is global for every AI
+        if (lastPlayerSighting.position != previousSighting)
 			personalLastSighting = lastPlayerSighting.position;
 
 		previousSighting = lastPlayerSighting.position;
@@ -36,6 +37,7 @@ public class enemySight : MonoBehaviour
 
 	void OnTriggerEnter(Collider coll) {
 		if(coll.gameObject.tag == "GunSound") {
+            // If player's bullet hits the wall and within hearing distance it moves to player position.
 			personalLastSighting = player.transform.position;
 		}
 	}
