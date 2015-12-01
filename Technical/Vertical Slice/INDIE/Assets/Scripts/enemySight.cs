@@ -53,9 +53,10 @@ public class enemySight : MonoBehaviour
 			if (player.GetComponent<PlayerControl>().sneaking == false) {
 				personalLastSighting = player.transform.position;
 			}
-
+            // Checks if player is inside the field of view
 			if (angle < fieldOfView * 0.5f) {
 				RaycastHit hit;
+                // Raycast from enemy to direction of player inside enemy's collider
 				if (Physics.Raycast(transform.position, dir.normalized * dist, out hit, col.radius)) {
                     if (hit.collider.gameObject == player)
                     {
@@ -75,7 +76,8 @@ public class enemySight : MonoBehaviour
 			playerInSight = false;
 
 	}
-
+    
+    // Calculates path to players location when sighted
 	float CalculatePathLenght(Vector3 targetPosition) {
 		NavMeshPath path = new NavMeshPath();
 		if (navAgent.enabled)

@@ -31,6 +31,7 @@ public class pauseMenuScript : MonoBehaviour {
             canvasOn = true;
         }
 
+        // If pause menu is on stop time in game and back to normal when canvas is off
         if (canvasOn)
         {
             Time.timeScale = 0;

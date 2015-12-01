@@ -63,12 +63,13 @@ public class enemyAI : MonoBehaviour {
 		if (sightingDeltaPos.sqrMagnitude > 4f)
 			navAgent.destination = EnemySight.personalLastSighting;
 
-            navAgent.stoppingDistance = 3;
+            navAgent.stoppingDistance = 4;
             navAgent.speed = chaseSpeed;
 
         if (navAgent.remainingDistance < navAgent.stoppingDistance) {
 			ChaseTimer += Time.deltaTime;
 
+            // If enemy losses sight of player it waits sometime and then resets player sighting positions and returns patrolling
 			if (ChaseTimer >= chaseWaitTime) {
 				lastPlayerSighting.position = lastPlayerSighting.resetPosition;
 				EnemySight.personalLastSighting = lastPlayerSighting.resetPosition;

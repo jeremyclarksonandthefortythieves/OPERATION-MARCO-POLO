@@ -38,7 +38,7 @@ public class enemyShooting : MonoBehaviour {
         else
             canShoot = false;
 
-
+        // If AI's raycast hit player, rate of fire is met and there is ammo left in clip, call shooting function
         if (sight.allowFire && canShoot && ammo > 0)
             ShootAI();
         
