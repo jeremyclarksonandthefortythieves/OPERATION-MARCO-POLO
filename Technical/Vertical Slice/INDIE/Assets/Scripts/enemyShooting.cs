@@ -10,10 +10,9 @@ public class enemyShooting : MonoBehaviour {
     private Transform player;
     private bool shooting;
     private enemySight sight;
-    private float reloadSpeed = 2.0f;
-    private float reloadTimer;
+    public float reloadSpeed = 3.0f;
     private float rateofFire = 1.5f;
-    private int ammo = 12;
+    public int ammo = 12;
 
 
     void Awake()
@@ -40,7 +39,7 @@ public class enemyShooting : MonoBehaviour {
             canShoot = false;
 
 
-        if (sight.allowFire && canShoot)
+        if (sight.allowFire && canShoot && ammo > 0)
             ShootAI();
         
         if(ammo <= 0)
@@ -50,6 +49,7 @@ public class enemyShooting : MonoBehaviour {
             if(reloadSpeed <= 0)
             {
                 ammo = 12;
+                reloadSpeed = 3.0f;
             }
         }
         
@@ -60,14 +60,12 @@ public class enemyShooting : MonoBehaviour {
         
         float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.position)) / col.radius;
             
-        if(ammo > 0)
-        {
             GameObject _bullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation) as GameObject;
             _bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
             ammo--;
             canShoot = false;
             rateofFire = 1.5f;
-        }
+        
             
 
             
