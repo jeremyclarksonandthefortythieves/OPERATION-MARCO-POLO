@@ -162,8 +162,8 @@ public class PlayerControl : MonoBehaviour
 		//if player hits a soundtrigger. sound about story will play
 		if (coll.gameObject.tag == "SoundTrigger") {
 			coll.GetComponent<AudioSource>().Play();
-			GameObject wT = Instantiate(walkieTalkie);
-			Destroy(wT, coll.GetComponent<AudioSource>().clip.length);
+			//GameObject wT = Instantiate(walkieTalkie);
+			//Destroy(wT, coll.GetComponent<AudioSource>().clip.length);
 
 		}
 		if(coll.gameObject.tag == "EndLevel") {
