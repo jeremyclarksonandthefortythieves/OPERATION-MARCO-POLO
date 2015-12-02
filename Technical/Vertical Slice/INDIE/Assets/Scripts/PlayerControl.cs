@@ -184,7 +184,7 @@ public class PlayerControl : MonoBehaviour
 	void InteractiveObject() {
 		Vector3 forward = transform.TransformDirection(Vector3.forward);
 		RaycastHit hitInfo;
-		if (Physics.Raycast(transform.position, forward, out hitInfo, 1f)) {
+		if (Physics.Raycast(transform.position + (transform.up*0.5f), forward, out hitInfo, 1f)) {
 			switch (hitInfo.collider.gameObject.tag) {
 				case "LootAble":
 					if (Input.GetKey(KeyCode.E)) {
@@ -213,7 +213,6 @@ public class PlayerControl : MonoBehaviour
 						hidingObject = hitInfo.collider.gameObject;
 						hiding = true;
 						controlsEnabled = false;
-						//Hide(hitInfo.collider.gameObject);
 						MeshRenderer[] mesh = gameObject.GetComponentsInChildren<MeshRenderer>();
 						foreach (MeshRenderer m in mesh) {
 							m.enabled = false;
