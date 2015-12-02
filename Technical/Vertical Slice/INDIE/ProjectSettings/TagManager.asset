@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - EndLevel
   - SoundTrigger
+  - Door1
   layers:
   - Default
   - TransparentFX

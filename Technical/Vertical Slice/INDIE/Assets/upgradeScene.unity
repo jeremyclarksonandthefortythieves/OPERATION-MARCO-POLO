@@ -1523,6 +1523,67 @@ RectTransform:
   m_AnchoredPosition: {x: 323.799988, y: 3.20000005}
   m_SizeDelta: {x: 50, y: 30}
   m_Pivot: {x: .5, y: .5}
+--- !u!1 &1193366677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1193366680}
+  - 114: {fileID: 1193366679}
+  - 114: {fileID: 1193366678}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1193366678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193366677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880cfc81dd1e5d2449c2e8c7d4d7f1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noDetection: 1
+  noKills: 1
+  loadUI: {fileID: 0}
+--- !u!114 &1193366679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193366677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e678005b23ca9479673a21e7d470aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveData:
+    money: 0
+    exp: 0
+    silencer: 0
+    smoke: 0
+    mine: 0
+    currentLevel: 0
+--- !u!4 &1193366680
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193366677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.16220284, y: 7.02086353, z: -11.2024393}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &1233943841
 GameObject:
   m_ObjectHideFlags: 0

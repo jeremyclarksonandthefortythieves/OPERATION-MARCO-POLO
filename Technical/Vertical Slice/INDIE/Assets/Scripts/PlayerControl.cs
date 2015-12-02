@@ -43,6 +43,8 @@ public class PlayerControl : MonoBehaviour
 		rb = gameObject.GetComponent<Rigidbody>();
 		moveDirection = new Vector3(0, 0, 0);
 		gameController.GetComponent<LoadSaveScript>().LoadSkillStats();
+
+		Destroy(GameObject.FindGameObjectWithTag("Door1"), 22);
 	}
 
 	void FixedUpdate() {
@@ -158,14 +160,6 @@ public class PlayerControl : MonoBehaviour
 
 	
 	void OnTriggerEnter(Collider coll) {
-
-		//if player hits a soundtrigger. sound about story will play
-		if (coll.gameObject.tag == "SoundTrigger") {
-			coll.GetComponent<AudioSource>().Play();
-			//GameObject wT = Instantiate(walkieTalkie);
-			//Destroy(wT, coll.GetComponent<AudioSource>().clip.length);
-
-		}
 		if(coll.gameObject.tag == "EndLevel") {
 			gameController.GetComponent<LevelController>().CompleteLevel();
 

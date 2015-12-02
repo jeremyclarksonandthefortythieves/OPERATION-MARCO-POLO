@@ -11,7 +11,6 @@ public class LoadSaveScript : MonoBehaviour {
 	public SaveData saveData;
 
 	void Awake() {
-		DontDestroyOnLoad(this.gameObject);
 		if (!File.Exists(url + fileName)) NewGame();
 	}
 

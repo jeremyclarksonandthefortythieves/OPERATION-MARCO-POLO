@@ -14,7 +14,6 @@ public class LevelController : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		gameController = GameObject.FindGameObjectWithTag("GameController");
 		gameController.GetComponent<LoadSaveScript>().Load();
-		DontDestroyOnLoad(gameObject);
 	}
 
 	//Checks if objectives are complete and gives player exp

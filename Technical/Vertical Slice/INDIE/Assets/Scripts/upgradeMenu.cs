@@ -26,7 +26,7 @@ public class upgradeMenu : MonoBehaviour
 
 	// Update is called once per frame
 	void Update() {
-		tokens.text = player.saveData.money.ToString();
+		tokens.text = "Money: " + player.saveData.money.ToString();
 
 		if (notEnough.enabled) {
 			textTimer -= Time.deltaTime;
