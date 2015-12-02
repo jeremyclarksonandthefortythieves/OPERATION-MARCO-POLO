@@ -10,6 +10,9 @@ public class SaveData
 
 	public int money;
 	public int exp;
+	public bool silencer;
+	public int smoke;
+	public int mine;
 
 	public int currentLevel;
 }

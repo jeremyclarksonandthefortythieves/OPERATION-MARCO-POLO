@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
 	private Animator anim;
 
 	//upgrades
-	public int bulletDamage;
+	public float bulletDamage;
 	public bool silencerEnabled;
 	public int smokeAmount = 0;
 	public int distractionAmount = 0;
@@ -42,6 +42,7 @@ public class PlayerControl : MonoBehaviour
 		speed = 5f;
 		rb = gameObject.GetComponent<Rigidbody>();
 		moveDirection = new Vector3(0, 0, 0);
+		gameController.GetComponent<LoadSaveScript>().LoadSkillStats();
 	}
 
 	void FixedUpdate() {
@@ -50,11 +51,22 @@ public class PlayerControl : MonoBehaviour
 			InteractiveObject();
 		} else {
 			Debug.Log("no controls");
+			anim.SetBool("Walking", false);
+
 			//press E again to 
 			if (Input.GetKeyDown(KeyCode.E)) {
 				hiding = false;
 				controlsEnabled = true;
-				gameObject.GetComponent<MeshRenderer>().enabled = true;
+				//gameObject.GetComponent<MeshRenderer>().enabled = true;
+
+				MeshRenderer[] mesh = gameObject.GetComponentsInChildren<MeshRenderer>();
+				foreach (MeshRenderer m in mesh) {
+					m.enabled = true;
+				}
+				SkinnedMeshRenderer[] mesh1 = gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
+				foreach (SkinnedMeshRenderer m in mesh1) {
+					m.enabled = true;
+				}
 				//transform.position += hidingObject.transform.forward;
 				hidingObject = null;
 			}
@@ -64,11 +76,6 @@ public class PlayerControl : MonoBehaviour
 	//player movement
 	//also sets bools in the animator. so the animator knows what animation it should play
 	void Control() {
-		if (GetComponent<Rigidbody>().velocity.magnitude > 0.2f) {
-			anim.SetBool("Walking", true);
-		} else {
-			anim.SetBool("Walking", false);
-		}
 		if (Input.GetKey(KeyCode.W)) moveDirection.z = 1f * speed;
 		if (Input.GetKey(KeyCode.A)) moveDirection.x = -1f * speed;
 		if (Input.GetKey(KeyCode.S)) moveDirection.z = -1f * speed;
@@ -92,7 +99,11 @@ public class PlayerControl : MonoBehaviour
 
 
 		rb.velocity = moveDirection;
-
+		if (GetComponent<Rigidbody>().velocity.magnitude < 0.5f) {
+			anim.SetBool("Walking", false);
+		} else {
+			anim.SetBool("Walking", true);
+		}
 
 		moveDirection = new Vector3(0, 0, 0);
 
@@ -100,7 +111,7 @@ public class PlayerControl : MonoBehaviour
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit)) {
-			transform.LookAt(new Vector3(hit.point.x, 0.5f, hit.point.z));
+			transform.LookAt(new Vector3(hit.point.x, 0f, hit.point.z));
 		}
 	}
 
@@ -108,10 +119,10 @@ public class PlayerControl : MonoBehaviour
 	void Shoot(string type) {
 		switch (type) {
 			case "bullet":
-				GameObject _bullet = Instantiate(bullet, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
-				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
+				GameObject _bullet = Instantiate(bullet, transform.position + transform.forward + transform.up, transform.rotation) as GameObject;
+				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
 				_bullet.GetComponent<BulletScript>().shotFromPlayer = true;
-				_bullet.GetComponent<BulletScript>().damage = 5;
+				_bullet.GetComponent<BulletScript>().damage = Mathf.RoundToInt(bulletDamage);
 
 				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
 				soundTrig.GetComponent<SphereCollider>().radius = 5f;
@@ -153,6 +164,10 @@ public class PlayerControl : MonoBehaviour
 			coll.GetComponent<AudioSource>().Play();
 			GameObject wT = Instantiate(walkieTalkie);
 			Destroy(wT, coll.GetComponent<AudioSource>().clip.length);
+
+		}
+		if(coll.gameObject.tag == "EndLevel") {
+			gameController.GetComponent<LevelController>().CompleteLevel();
 
 		}
 	}
@@ -198,9 +213,17 @@ public class PlayerControl : MonoBehaviour
 						hidingObject = hitInfo.collider.gameObject;
 						hiding = true;
 						controlsEnabled = false;
-						Hide(hitInfo.collider.gameObject);
+						//Hide(hitInfo.collider.gameObject);
+						MeshRenderer[] mesh = gameObject.GetComponentsInChildren<MeshRenderer>();
+						foreach (MeshRenderer m in mesh) {
+							m.enabled = false;
+						}
+						SkinnedMeshRenderer[] mesh1 = gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
+						foreach (SkinnedMeshRenderer m in mesh1) {
+							m.enabled = false;
+						}
 					}
-				break;
+					break;
 				case "CompleteLevel":
 					if (Input.GetKey(KeyCode.E)) {
 						gameController.GetComponent<LevelController>().CompleteLevel();

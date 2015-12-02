@@ -28,6 +28,7 @@ public class BulletScript : MonoBehaviour {
 				break;
 			case "Player":
 				coll.gameObject.GetComponent<PlayerControl>().GetDamage();
+				SoundTrigger(0.1f);
 				break;
 
 		}

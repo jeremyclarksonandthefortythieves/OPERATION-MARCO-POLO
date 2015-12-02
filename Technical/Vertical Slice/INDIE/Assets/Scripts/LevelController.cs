@@ -20,6 +20,7 @@ public class LevelController : MonoBehaviour {
 	//Checks if objectives are complete and gives player exp
 	//
 	public void CompleteLevel() {
+		GetComponent<LoadSaveScript>().Save();
 		if (noDetection) {
 			player.GetComponent<PlayerControl>().GetExp();
 			Debug.Log("completed with no detection");
@@ -35,7 +36,6 @@ public class LevelController : MonoBehaviour {
 	//asyncs load new level in the background
 	//while watching a loading UI
 	public void NextLevel() {
-		GameObject ui = Instantiate(loadUI);
 		Application.LoadLevelAsync(Application.loadedLevel + 1);
 
 	}

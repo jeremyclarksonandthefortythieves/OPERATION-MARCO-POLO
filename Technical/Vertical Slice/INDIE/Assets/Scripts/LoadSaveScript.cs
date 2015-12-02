@@ -29,6 +29,10 @@ public class LoadSaveScript : MonoBehaviour {
 
 		saveData.money = 0;
 		saveData.exp = 0;
+		saveData.mine = 0;
+		saveData.smoke = 0;
+		saveData.silencer = false;
+
 		saveData.currentLevel = 1;
 
 		createFolder(url);
@@ -45,6 +49,11 @@ public class LoadSaveScript : MonoBehaviour {
 
 		saveData.money = player.money;
 		saveData.exp = player.exp;
+		saveData.mine = player.distractionAmount;
+		saveData.smoke = player.smokeAmount;
+		saveData.silencer = false;
+
+
 		saveData.currentLevel = Application.loadedLevel;
 
 
@@ -70,6 +79,9 @@ public class LoadSaveScript : MonoBehaviour {
 
 		Load();
 
+		player.silencerEnabled = saveData.silencer;
+		player.distractionAmount = saveData.mine;
+		player.smokeAmount = saveData.smoke;
 		player.money = saveData.money;
 		player.exp = saveData.exp;
 	}

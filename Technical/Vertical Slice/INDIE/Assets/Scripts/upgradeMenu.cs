@@ -41,6 +41,7 @@ public class upgradeMenu : MonoBehaviour {
         if(player.money >= 3)
         {
             player.money -= 3;
+			player.silencerEnabled = true;
             silencer.enabled = false;
         }
 
@@ -56,7 +57,8 @@ public class upgradeMenu : MonoBehaviour {
         if (player.money >= 3)
         {
             player.money -= 3;
-            Smoke.enabled = false;
+			player.smokeAmount += 1;
+			Smoke.enabled = false;
         }
 
         else if (player.money < 3)
@@ -70,7 +72,8 @@ public class upgradeMenu : MonoBehaviour {
         if (player.money >= 3)
         {
             player.money -= 3;
-            Mine.enabled = false;
+			player.distractionAmount += 1;
+			Mine.enabled = false;
         }
 
         else if (player.money < 3)

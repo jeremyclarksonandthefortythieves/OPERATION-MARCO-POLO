@@ -32,24 +32,29 @@ public class enemyAI : MonoBehaviour {
 		EnemySight = GetComponent<enemySight> ();
 		navAgent = GetComponent<NavMeshAgent> ();
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		Debug.Log(player.gameObject.transform.position);
 		lastPlayerSighting = GameObject.FindGameObjectWithTag ("GameController").GetComponent<LastPlayerSighting> ();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (EnemySight.personalLastSighting != lastPlayerSighting.resetPosition) {
-			Invoke("Chase", 1.5f);
-			alerted = true;
-        } else {
-			Patrol();
-			alerted = false;
+		if (health > 0) {
+
+			if (EnemySight.personalLastSighting != lastPlayerSighting.resetPosition) {
+				Invoke("Chase", 1.5f);
+				alerted = true;
+			} else {
+				Patrol();
+				alerted = false;
+			}
+			AnimatorControl();
 		}
 
 	}
 
 	void AnimatorControl() {
-		if (navAgent.velocity.magnitude > 0.2f) {
+		if (navAgent.velocity.magnitude > 0.5f) {
 			anim.SetBool("Walking", true);
 		}else{
 			anim.SetBool("Walking", false);
@@ -100,8 +105,14 @@ public class enemyAI : MonoBehaviour {
 	public void GetDamage(int i) {
 		health -= i;
 		if(health <= 0 || !alerted) {
-			//die
-			Destroy(gameObject);
+			health = -1;
+			gameObject.GetComponent<Collider>().enabled = false;
+			gameObject.GetComponent<enemySight>().enabled = false;
+			gameObject.GetComponent<enemyShooting>().enabled = false;
+			gameObject.GetComponent<NavMeshAgent>().enabled = false;
+			gameObject.GetComponent<enemyAI>().enabled = false;
+			anim.SetTrigger("Die");
+
 
 		}
 	}

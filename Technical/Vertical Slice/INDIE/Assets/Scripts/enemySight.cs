@@ -20,7 +20,7 @@ public class enemySight : MonoBehaviour
 		navAgent = GetComponent<NavMeshAgent>();
 		col = GetComponent<SphereCollider>();
 		lastPlayerSighting = GameObject.FindGameObjectWithTag("GameController").GetComponent<LastPlayerSighting>();
-		player = GameObject.FindGameObjectWithTag("Player");
+		//player = GameObject.FindGameObjectWithTag("Player");
 
         personalLastSighting = lastPlayerSighting.resetPosition;
 		previousSighting = lastPlayerSighting.resetPosition;
@@ -47,29 +47,30 @@ public class enemySight : MonoBehaviour
 	}
 
 	void OnTriggerStay(Collider other) {
-		if (other.gameObject == player) {
+		if (other.gameObject.tag == "Player") {
+			Debug.Log("player touch");
 
 			playerInSight = false;
             allowFire = false;
 
-            float dist = Vector3.Distance(transform.position, player.transform.position);
-			Vector3 dir = player.transform.position - transform.position;
+            float dist = Vector3.Distance(transform.position, other.gameObject.transform.position);
+			Vector3 dir = other.gameObject.transform.position - transform.position;
 			float angle = Vector3.Angle(dir.normalized * dist, transform.forward);
 
-			if (player.GetComponent<PlayerControl>().sneaking == false) {
-				personalLastSighting = player.transform.position;
+			if (other.gameObject.GetComponent<PlayerControl>().sneaking == false && other.gameObject.GetComponent<PlayerControl>().hiding == false ) {
+				personalLastSighting = other.gameObject.transform.position;
 			}
             // Checks if player is inside the field of view
 			if (angle < fieldOfView * 0.5f) {
 				RaycastHit hit;
                 // Raycast from enemy to direction of player inside enemy's collider
 				if (Physics.Raycast(transform.position, dir.normalized * dist, out hit, col.radius)) {
-                    if (hit.collider.gameObject == player)
+                    if (hit.collider.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerControl>().hiding == false)
                     {
                         allowFire = true;
                         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir, Vector3.up), 0.1f);
                         playerInSight = true;
-                        lastPlayerSighting.position = player.transform.position;
+                        lastPlayerSighting.position = other.gameObject.transform.position;
                     }
                         
 				}

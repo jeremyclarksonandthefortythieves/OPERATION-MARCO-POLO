@@ -22,11 +22,6 @@ public class enemyShooting : MonoBehaviour {
         sight = GetComponent<enemySight>();
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         rateofFire -= Time.deltaTime;
@@ -59,16 +54,12 @@ public class enemyShooting : MonoBehaviour {
     { 
         
         float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.position)) / col.radius;
-            
-            GameObject _bullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation) as GameObject;
+
+		GameObject _bullet = Instantiate(bullet, transform.position + transform.up + transform.forward, transform.rotation) as GameObject;
             _bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
             ammo--;
             canShoot = false;
-            rateofFire = 1.5f;
-        
-            
-
-            
+            rateofFire = 1.5f;            
             
     }
 
