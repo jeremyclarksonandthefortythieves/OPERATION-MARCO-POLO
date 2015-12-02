@@ -23,7 +23,7 @@ public class LoadSaveScript : MonoBehaviour {
 	}
 
 
-
+	//removes the file. all values in savedata are reset creates new file. 
 	public void NewGame() {
 		if(File.Exists(url + fileName)) File.Delete(url + fileName);
 
@@ -39,12 +39,14 @@ public class LoadSaveScript : MonoBehaviour {
 
 	}
 
+
 	public void Save() {
 		PlayerControl player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 
 		saveData.money = player.money;
 		saveData.exp = player.exp;
 		saveData.currentLevel = Application.loadedLevel;
+
 
 
 		createFolder(url);
@@ -69,5 +71,6 @@ public class LoadSaveScript : MonoBehaviour {
 		Load();
 
 		player.money = saveData.money;
+		player.exp = saveData.exp;
 	}
 }

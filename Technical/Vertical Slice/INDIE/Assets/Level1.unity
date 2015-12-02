@@ -452,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveData:
     money: 0
+    exp: 0
     currentLevel: 0
 --- !u!4 &347285132
 Transform:
@@ -3896,7 +3897,7 @@ GameObject:
   - 108: {fileID: 1670918046}
   - 114: {fileID: 1670918047}
   - 135: {fileID: 1670918048}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

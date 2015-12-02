@@ -9,14 +9,12 @@ public class HUDscript : MonoBehaviour {
 
     private PlayerControl player;
     
-	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
         crouch.enabled = false;
         stand.enabled = true;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
         if (player.sneaking)
         {

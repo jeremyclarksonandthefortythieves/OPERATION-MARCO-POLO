@@ -39,6 +39,7 @@ public class PlayerControl : MonoBehaviour
 			InteractiveObject();
 		} else {
 			Debug.Log("no controls");
+			//press E again to 
 			if (Input.GetKeyDown(KeyCode.E)) {
 				hiding = false;
 				controlsEnabled = true;
@@ -49,6 +50,7 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
+	//player movement
 	void Control() {
 		if (Input.GetKey(KeyCode.W)) moveDirection.z = 1f * speed;
 		if (Input.GetKey(KeyCode.A)) moveDirection.x = -1f * speed;
@@ -83,7 +85,7 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
-
+	//instantiates a gameobject which he shoots forward
 	void Shoot(string type) {
 		switch (type) {
 			case "bullet":
@@ -95,7 +97,8 @@ public class PlayerControl : MonoBehaviour
 				soundTrig.GetComponent<SphereCollider>().radius = 5f;
 				break;
 			case "smoke":
-
+				GameObject smokeNade = Instantiate(smokeGrenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
+				smokeNade.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
 				break;
 
 			case "distraction":
@@ -110,7 +113,9 @@ public class PlayerControl : MonoBehaviour
 		controlsEnabled = false;
 		gameObject.GetComponent<MeshRenderer>().enabled = false;
 	}
-			
+	
+	//player gets exp for completing objectives		
+	//if he completes 2 he gets a token(money) to buy upgrades
 	public void GetExp() {
 		exp += 1;
 		if (exp >= 2) {
@@ -120,21 +125,26 @@ public class PlayerControl : MonoBehaviour
 
 	}
 
+	
 	void OnTriggerEnter(Collider coll) {
-		if(coll.gameObject.tag == "SoundTrigger") {
+
+		//if player hits a soundtrigger. sound about story will play
+		if (coll.gameObject.tag == "SoundTrigger") {
+			coll.GetComponent<AudioSource>().Play();
 			GameObject wT = Instantiate(walkieTalkie);
 			Destroy(wT, coll.GetComponent<AudioSource>().clip.length);
 
 		}
 	}
 
+	/*every frame checks if the player is looking at an interactive object
+	  if so he press E and he will use that object
+	  */
+
 	void InteractiveObject() {
-		//raycasts for objects if interactable
 		Vector3 forward = transform.TransformDirection(Vector3.forward);
 		RaycastHit hitInfo;
-		Debug.DrawRay(transform.position, forward);
 		if (Physics.Raycast(transform.position, forward, out hitInfo, 1f)) {
-			Debug.Log(hitInfo.collider.gameObject.tag);
 			switch (hitInfo.collider.gameObject.tag) {
 				case "LootAble":
 					if (Input.GetKey(KeyCode.E)) {

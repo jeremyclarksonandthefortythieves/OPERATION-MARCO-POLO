@@ -14,6 +14,7 @@ public class PasswordScript : MonoBehaviour {
 
 	void Update() {
 		if (activated) {
+			//removes UI from scene. and enables player controls again
 			if (Input.GetKeyDown(KeyCode.E)) {
 				Destroy(img);
 				activated = false;
@@ -28,9 +29,15 @@ public class PasswordScript : MonoBehaviour {
 		password = pass;
 	}
 
+	//Function called when player interacts with gameobject
+	
 	public void GetPassword() {
+		//Player cant move when he interacted with this gameobject
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		player.GetComponent<PlayerControl>().controlsEnabled = false;
+
+		//loads an UI object. the object has a child with a component.
+		//Change that text into the password
 		img = Instantiate(passwordImage);
 		img.transform.SetParent(_canvas.transform, false);
 		Text text = img.GetComponentInChildren<UnityEngine.UI.Text>();

@@ -40,6 +40,10 @@ public class enemySight : MonoBehaviour
             // If player's bullet hits the wall and within hearing distance it moves to player position.
 			personalLastSighting = player.transform.position;
 		}
+		//sound of a distraction object
+		if(coll.gameObject.tag == "DistractionObject") {
+			personalLastSighting = coll.gameObject.transform.position;
+		}
 	}
 
 	void OnTriggerStay(Collider other) {

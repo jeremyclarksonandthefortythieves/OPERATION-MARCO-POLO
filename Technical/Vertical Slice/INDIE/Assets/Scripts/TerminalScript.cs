@@ -27,6 +27,7 @@ public class TerminalScript : MonoBehaviour {
 		password [1] = getRandom.Next(10);
 		password [2] = getRandom.Next(10);
 
+		//searches for objects that show the password. if ID is the same as the terminal change password of the password object to this one 
 		player = GameObject.FindGameObjectWithTag("Player");
 		passwordObjects = GameObject.FindGameObjectsWithTag("Password");
 		foreach(GameObject p in passwordObjects) {
@@ -37,8 +38,8 @@ public class TerminalScript : MonoBehaviour {
 	}
 
 	void Update() {
-
 		if (active) {
+			//removes UI from scene. and enables player controls again
 			if (Input.GetKeyDown(KeyCode.E)) {
 				Destroy(terminalUI);
 				Destroy(terminalUI);
@@ -54,6 +55,7 @@ public class TerminalScript : MonoBehaviour {
 		return password[0].ToString() + password[1].ToString() + password[2].ToString();
 	}
 
+	//checks if terminal is unlocked and shows UI depending if ulocked
 	public void UseTerminal() {
 		Debug.Log("Use terminal");
 		if (locked && !active) {
@@ -74,6 +76,7 @@ public class TerminalScript : MonoBehaviour {
 		}
 	}
 
+	//opens the linked door
 	public void OpenDoor() {
 		locked = false;
 		active = false;
@@ -82,6 +85,7 @@ public class TerminalScript : MonoBehaviour {
 		opened = true;
 	}
 
+	//gets the string from the ui input
 	public void EnterPassword(string s) {
 		if (s == GetPassword()) {
 			Debug.Log("Good pass");

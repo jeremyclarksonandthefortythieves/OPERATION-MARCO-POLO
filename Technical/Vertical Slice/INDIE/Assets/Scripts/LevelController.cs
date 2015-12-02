@@ -18,7 +18,6 @@ public class LevelController : MonoBehaviour {
 	}
 
 	//Checks if objectives are complete and gives player exp
-	//asyncs load new level
 	//
 	public void CompleteLevel() {
 		if (noDetection) {
@@ -33,6 +32,8 @@ public class LevelController : MonoBehaviour {
 		//spawns the upgrade menu here with button for next level
 	}
 
+	//asyncs load new level in the background
+	//while watching a loading UI
 	public void NextLevel() {
 		GameObject ui = Instantiate(loadUI);
 		Application.LoadLevelAsync(Application.loadedLevel + 1);
