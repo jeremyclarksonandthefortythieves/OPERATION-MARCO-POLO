@@ -10074,6 +10074,33 @@ Prefab:
       propertyPath: m_Name
       value: pauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 11412772, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d16ccfbb9719e54489628726392e9e4,
+        type: 3}
+    - target: {fileID: 11412772, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411958, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411958, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451288, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d16ccfbb9719e54489628726392e9e4,
+        type: 3}
+    - target: {fileID: 11473660, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d16ccfbb9719e54489628726392e9e4,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
   m_IsPrefabParent: 0
