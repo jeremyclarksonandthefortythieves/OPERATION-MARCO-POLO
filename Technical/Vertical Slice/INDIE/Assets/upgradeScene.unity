@@ -1348,7 +1348,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1049366579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1356001336}
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1049366579
@@ -2187,7 +2198,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1356001337}
   - 114: {fileID: 1356001336}
-  - 114: {fileID: 1356001338}
   - 54: {fileID: 1356001339}
   m_Layer: 0
   m_Name: menuController
@@ -2211,9 +2221,6 @@ MonoBehaviour:
   silencer: {fileID: 284212358}
   Smoke: {fileID: 820342841}
   Mine: {fileID: 429834838}
-  silencerDone: {fileID: 323361543}
-  smokeDone: {fileID: 1350810389}
-  mineDone: {fileID: 645185361}
   notEnough: {fileID: 1488918745}
   tokens: {fileID: 1042864304}
 --- !u!4 &1356001337
@@ -2228,31 +2235,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!114 &1356001338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1356001335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429ded1571aa8864893492bc338c6a62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDamage: 0
-  silencerEnabled: 0
-  smokeAmount: 0
-  distractionAmount: 0
-  controlsEnabled: 0
-  exp: 0
-  walkieTalkie: {fileID: 0}
-  hiding: 0
-  money: 10
-  sneaking: 0
-  soundTrigger: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
-  bullet: {fileID: 145684, guid: 3800710bebe8cf743845d25c3fb6e058, type: 2}
-  smokeGrenade: {fileID: 0}
-  distractionMine: {fileID: 0}
 --- !u!54 &1356001339
 Rigidbody:
   m_ObjectHideFlags: 0

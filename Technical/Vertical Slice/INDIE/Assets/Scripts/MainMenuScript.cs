@@ -13,13 +13,13 @@ public class MainMenuScript : MonoBehaviour {
 	}
 
 	public void ContinueGame() {
-		Application.LoadLevel(saveScript.saveData.currentLevel);
+		Application.LoadLevel(0);
 		
 	}
 
 	public void NewGame() {
 		saveScript.NewGame();
-		Application.LoadLevel(saveScript.saveData.currentLevel);
+		Application.LoadLevel(0);
 	}
 
 	public void ExitGame() {

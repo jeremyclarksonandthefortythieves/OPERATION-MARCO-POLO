@@ -65,6 +65,15 @@ public class LoadSaveScript : MonoBehaviour {
 		file.Close();
 	}
 
+	public void SaveInUI() {
+
+		createFolder(url);
+		BinaryFormatter bf = new BinaryFormatter();
+		FileStream file = File.Create(url + fileName);
+		bf.Serialize(file, saveData);
+		file.Close();
+	}
+
 	public void Load() {
 		if (File.Exists(url + fileName)) {
 			BinaryFormatter bf = new BinaryFormatter();
