@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour {
 	private bool destroyed = false;
 	public GameObject soundTrig;
 	public bool shotFromPlayer = false;
+	public int damage = 1;
 
 	void SoundTrigger(float rad) {
 		if (!destroyed && shotFromPlayer) { 
@@ -23,7 +24,12 @@ public class BulletScript : MonoBehaviour {
 				break;
 			case "Enemy":
 				SoundTrigger(2f);
+				coll.gameObject.GetComponent<enemyAI>().GetDamage(damage);
 				break;
+			case "Player":
+				coll.gameObject.GetComponent<PlayerControl>().GetDamage();
+				break;
+
 		}
 	}
 }

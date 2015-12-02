@@ -11,6 +11,13 @@ public class PlayerControl : MonoBehaviour
 	public bool controlsEnabled;
 	private GameObject hidingObject;
 	private GameObject gameController;
+	private int health = 2;
+
+	//upgrades
+	public int bulletDamage;
+	public bool silencerEnabled;
+	public int smokeAmount = 0;
+	public int distractionAmount = 0;
 
 	public int exp;
 	public GameObject walkieTalkie;
@@ -23,6 +30,8 @@ public class PlayerControl : MonoBehaviour
 	public GameObject distractionMine;
 
 	void Start() {
+		bulletDamage = 10;
+		silencerEnabled = false;
 		gameController = GameObject.FindGameObjectWithTag("GameController");
 		controlsEnabled = true;
 		hiding = false;
@@ -57,8 +66,8 @@ public class PlayerControl : MonoBehaviour
 		if (Input.GetKey(KeyCode.S)) moveDirection.z = -1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
-		if (Input.GetKeyDown(KeyCode.Alpha1)) Shoot("smoke");
-		if (Input.GetKeyDown(KeyCode.Alpha2)) Shoot("distraction");
+		if (Input.GetKeyDown(KeyCode.Alpha1) && distractionAmount > 0) Shoot("smoke");
+		if (Input.GetKeyDown(KeyCode.Alpha2) && distractionAmount > 0) Shoot("distraction");
 		if (Input.GetKeyDown(KeyCode.Mouse0)) Shoot("bullet");
 		if (Input.GetKeyDown(KeyCode.LeftShift)) {
 			if (!sneaking) {
@@ -92,6 +101,7 @@ public class PlayerControl : MonoBehaviour
 				GameObject _bullet = Instantiate(bullet, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
 				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
 				_bullet.GetComponent<BulletScript>().shotFromPlayer = true;
+				_bullet.GetComponent<BulletScript>().damage = 5;
 
 				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
 				soundTrig.GetComponent<SphereCollider>().radius = 5f;
@@ -140,6 +150,11 @@ public class PlayerControl : MonoBehaviour
 	/*every frame checks if the player is looking at an interactive object
 	  if so he press E and he will use that object
 	  */
+
+	public void GetDamage() {
+		health -= 1;
+		if (health <= 0) Debug.Log("gameover");
+	}
 
 	void InteractiveObject() {
 		Vector3 forward = transform.TransformDirection(Vector3.forward);

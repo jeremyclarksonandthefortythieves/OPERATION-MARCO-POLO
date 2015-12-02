@@ -9,6 +9,8 @@ public class enemyAI : MonoBehaviour {
 	public GameObject[] wayPoints;
 	public float patrolWaitTime = 2f;
 
+	private bool alerted;
+	private int health;
 	private int wayPoint;
 	private enemySight EnemySight;
     private enemyShooting Shooting;
@@ -21,6 +23,8 @@ public class enemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		alerted = false;
+		health = 10;
 		wayPoint = 0;
 		patrolTimer = 0;
 		EnemySight = GetComponent<enemySight> ();
@@ -34,8 +38,10 @@ public class enemyAI : MonoBehaviour {
 	void Update () {
 		if (EnemySight.personalLastSighting != lastPlayerSighting.resetPosition) {
 			Invoke("Chase", 1.5f);
-		} else {
+			alerted = true;
+        } else {
 			Patrol();
+			alerted = false;
 		}
 
 	}
@@ -79,6 +85,15 @@ public class enemyAI : MonoBehaviour {
 		} else
 			ChaseTimer = 0;
 
+	}
+
+	public void GetDamage(int i) {
+		health -= i;
+		if(health <= 0 || !alerted) {
+			//die
+			Destroy(gameObject);
+
+		}
 	}
 
 }
