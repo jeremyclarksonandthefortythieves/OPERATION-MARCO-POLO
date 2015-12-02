@@ -9,12 +9,12 @@ public class TerminalScript : MonoBehaviour {
 
 	private int[] password = new int[3];
 	private GameObject[] passwordObjects;
-	private bool locked;
 	private GameObject terminalUI;
 	private bool active = false;
 	private GameObject player;
 	private bool opened = false;
 
+	public bool locked = true;
 	public int id;
 	public GameObject linkedDoor;
 	public GameObject codeInput;
@@ -22,11 +22,10 @@ public class TerminalScript : MonoBehaviour {
 	public GameObject _canvas;
 
 	void Start() {
-		locked = true;
-		password [0] = getRandom.Next(10);
-		password [1] = getRandom.Next(10);
-		password [2] = getRandom.Next(10);
-
+		password[0] = getRandom.Next(10);
+		password[1] = getRandom.Next(10);
+		password[2] = getRandom.Next(10);
+		Debug.Log(GetPassword());
 		//searches for objects that show the password. if ID is the same as the terminal change password of the password object to this one 
 		player = GameObject.FindGameObjectWithTag("Player");
 		passwordObjects = GameObject.FindGameObjectsWithTag("Password");
@@ -83,6 +82,9 @@ public class TerminalScript : MonoBehaviour {
 		Destroy(terminalUI);
 		Destroy(linkedDoor);
 		opened = true;
+		terminalUI = null;
+		player.GetComponent<PlayerControl>().controlsEnabled = true;
+
 	}
 
 	//gets the string from the ui input
