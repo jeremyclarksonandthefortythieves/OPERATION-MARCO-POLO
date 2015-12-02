@@ -8,10 +8,10 @@ public class PlayerControl : MonoBehaviour
 	private Vector3 moveDirection;
 	private Rigidbody rb;
 	private ArrayList[] keyCodes;
-	public bool controlsEnabled;
 	private GameObject hidingObject;
 	private GameObject gameController;
 	private int health = 2;
+	private Animator anim;
 
 	//upgrades
 	public int bulletDamage;
@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour
 	public int smokeAmount = 0;
 	public int distractionAmount = 0;
 
+	public bool controlsEnabled;
 	public int exp;
 	public GameObject walkieTalkie;
     public bool hiding;
@@ -30,6 +31,7 @@ public class PlayerControl : MonoBehaviour
 	public GameObject distractionMine;
 
 	void Start() {
+		anim = GetComponent<Animator>();
 		bulletDamage = 10;
 		silencerEnabled = false;
 		gameController = GameObject.FindGameObjectWithTag("GameController");
@@ -60,7 +62,13 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	//player movement
+	//also sets bools in the animator. so the animator knows what animation it should play
 	void Control() {
+		if (GetComponent<Rigidbody>().velocity.magnitude > 0.2f) {
+			anim.SetBool("Walking", true);
+		} else {
+			anim.SetBool("Walking", false);
+		}
 		if (Input.GetKey(KeyCode.W)) moveDirection.z = 1f * speed;
 		if (Input.GetKey(KeyCode.A)) moveDirection.x = -1f * speed;
 		if (Input.GetKey(KeyCode.S)) moveDirection.z = -1f * speed;
@@ -72,9 +80,11 @@ public class PlayerControl : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.LeftShift)) {
 			if (!sneaking) {
 				sneaking = true;
+				anim.SetBool("Crouching", true);
 				speed = 2f;
 			} else {
 				sneaking = false;
+				anim.SetBool("Crouching", false);
 				speed = 5f;
 			}
 		}
