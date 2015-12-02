@@ -313,6 +313,7 @@ GameObject:
   - 4: {fileID: 1356001337}
   - 114: {fileID: 1356001336}
   - 114: {fileID: 1356001338}
+  - 54: {fileID: 1356001339}
   m_Layer: 0
   m_Name: menuController
   m_TagString: Untagged
@@ -333,8 +334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeScreen: {fileID: 1046790778}
   silencer: {fileID: 284212358}
-  Mine: {fileID: 820342841}
-  Smoke: {fileID: 429834838}
+  Smoke: {fileID: 820342841}
+  Mine: {fileID: 429834838}
   notEnough: {fileID: 1488918745}
   tokens: {fileID: 1042864304}
 --- !u!4 &1356001337
@@ -360,20 +361,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429ded1571aa8864893492bc338c6a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlsEnabled: 0
   bulletDamage: 0
   silencerEnabled: 0
   smokeAmount: 0
   distractionAmount: 0
+  controlsEnabled: 0
   exp: 0
   walkieTalkie: {fileID: 0}
   hiding: 0
   money: 10
   sneaking: 0
-  soundTrigger: {fileID: 0}
-  bullet: {fileID: 0}
+  soundTrigger: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
+  bullet: {fileID: 145684, guid: 3800710bebe8cf743845d25c3fb6e058, type: 2}
   smokeGrenade: {fileID: 0}
   distractionMine: {fileID: 0}
+--- !u!54 &1356001339
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1356001335}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1488918745 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11495368, guid: 7eb39042c8e5f2a46898d69e8aeb8e8a,
