@@ -9,6 +9,7 @@ public class enemyAI : MonoBehaviour {
 	public GameObject[] wayPoints;
 	public float patrolWaitTime = 2f;
 
+	private Animator anim;
 	private bool alerted;
 	private int health;
 	private int wayPoint;
@@ -23,6 +24,7 @@ public class enemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		anim = GetComponent<Animator>();
 		alerted = false;
 		health = 10;
 		wayPoint = 0;
@@ -44,6 +46,14 @@ public class enemyAI : MonoBehaviour {
 			alerted = false;
 		}
 
+	}
+
+	void AnimatorControl() {
+		if (navAgent.velocity.magnitude > 0.2f) {
+			anim.SetBool("Walking", true);
+		} else {
+			anim.SetBool("Walking", false); 
+		}
 	}
 
 	void Patrol() {
