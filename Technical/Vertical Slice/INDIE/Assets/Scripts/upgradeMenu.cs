@@ -6,9 +6,10 @@ public class upgradeMenu : MonoBehaviour {
 
     public Canvas upgradeScreen;
     public Image silencer,
-                 Mine,
-                 Smoke;
-    public Text notEnough;
+                 Smoke,
+                 Mine;
+    public Text notEnough,
+                tokens;
 
     private PlayerControl player;
     private float textTimer = 2;
@@ -21,7 +22,9 @@ public class upgradeMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if(notEnough.enabled)
+        tokens.text = player.money.ToString();
+
+        if (notEnough.enabled)
         {
             textTimer -= Time.deltaTime;
 
@@ -37,10 +40,11 @@ public class upgradeMenu : MonoBehaviour {
     {
         if(player.money >= 3)
         {
-            
+            player.money -= 3;
+            silencer.enabled = false;
         }
 
-        if(player.money < 3)
+        else if(player.money < 3)
         {
             notEnough.enabled = true;
         }
@@ -49,7 +53,13 @@ public class upgradeMenu : MonoBehaviour {
 
     public void smokeGrenade()
     {
-        if (player.money < 3)
+        if (player.money >= 3)
+        {
+            player.money -= 3;
+            Smoke.enabled = false;
+        }
+
+        else if (player.money < 3)
         {
             notEnough.enabled = true;
         }
@@ -57,14 +67,29 @@ public class upgradeMenu : MonoBehaviour {
 
     public void proximityMine()
     {
-        if (player.money < 3)
+        if (player.money >= 3)
+        {
+            player.money -= 3;
+            Mine.enabled = false;
+        }
+
+        else if (player.money < 3)
         {
             notEnough.enabled = true;
         }
     }
 
-    public void weaponDMGUpgrader()
+    public void weaponDMGU1()
     {
+        if(player.money >= 2)
+        {
+            player.money -= 2;
+            player.bulletDamage += 2;
+        }
 
+        else if(player.money < 2)
+        {
+            notEnough.enabled = true;
+        }
     }
 }
