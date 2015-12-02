@@ -20,7 +20,7 @@ public class enemySight : MonoBehaviour
 		navAgent = GetComponent<NavMeshAgent>();
 		col = GetComponent<SphereCollider>();
 		lastPlayerSighting = GameObject.FindGameObjectWithTag("GameController").GetComponent<LastPlayerSighting>();
-		//player = GameObject.FindGameObjectWithTag("Player");
+		player = GameObject.FindGameObjectWithTag("Player");
 
         personalLastSighting = lastPlayerSighting.resetPosition;
 		previousSighting = lastPlayerSighting.resetPosition;

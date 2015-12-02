@@ -45,7 +45,7 @@ public class enemyAI : MonoBehaviour {
 				Invoke("Chase", 1.5f);
 				alerted = true;
 			} else {
-				Patrol();
+				if(wayPoints.Length > 0) Patrol();
 				alerted = false;
 			}
 			AnimatorControl();
