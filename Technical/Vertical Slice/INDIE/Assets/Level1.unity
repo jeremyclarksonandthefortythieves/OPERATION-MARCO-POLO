@@ -4969,9 +4969,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeScreen: {fileID: 0}
   silencer: {fileID: 0}
-  Mine: {fileID: 0}
   Smoke: {fileID: 0}
+  Mine: {fileID: 0}
   notEnough: {fileID: 0}
+  tokens: {fileID: 0}
 --- !u!1 &2058009746
 GameObject:
   m_ObjectHideFlags: 0
