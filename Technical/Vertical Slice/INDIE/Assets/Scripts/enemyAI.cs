@@ -51,8 +51,8 @@ public class enemyAI : MonoBehaviour {
 	void AnimatorControl() {
 		if (navAgent.velocity.magnitude > 0.2f) {
 			anim.SetBool("Walking", true);
-		} else {
-			anim.SetBool("Walking", false); 
+		}else{
+			anim.SetBool("Walking", false);
 		}
 	}
 
