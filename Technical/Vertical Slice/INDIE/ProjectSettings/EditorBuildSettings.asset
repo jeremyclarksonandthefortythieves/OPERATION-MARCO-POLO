@@ -12,6 +12,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/upgradeScene.unity
   - enabled: 1
-    path: Assets/TestScene.unity
+    path: Assets/Level2.unity
   - enabled: 1
     path: Assets/upgradeScene.unity
