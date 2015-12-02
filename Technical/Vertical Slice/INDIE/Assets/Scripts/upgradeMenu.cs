@@ -7,18 +7,32 @@ public class upgradeMenu : MonoBehaviour {
     public Canvas upgradeScreen;
     public Image silencer,
                  Smoke,
-                 Mine;
+                 Mine,
+                 silencerDone,
+                 smokeDone,
+                 mineDone;
+
     public Text notEnough,
                 tokens;
 
     private PlayerControl player;
     private float textTimer = 2;
+    private bool boughtSilencer,
+                 boughtSmoke,
+                 boughtMine;
 
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("menuController").GetComponent<PlayerControl>();
         notEnough.enabled = false;
-	}
+        boughtMine = false;
+        boughtSilencer = false;
+        boughtSmoke = false;
+        silencerDone.enabled = false;
+        smokeDone.enabled = false;
+        mineDone.enabled = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,6 +48,15 @@ public class upgradeMenu : MonoBehaviour {
                 textTimer = 2;
             }
         }
+
+        if (boughtMine)
+            mineDone.enabled = true;
+
+        if (boughtSilencer)
+            silencerDone.enabled = true;
+
+        if (boughtSmoke)
+            smokeDone.enabled = true;
 	}
 
     public void Silencer()
@@ -41,7 +64,7 @@ public class upgradeMenu : MonoBehaviour {
         if(player.money >= 3)
         {
             player.money -= 3;
-            silencer.enabled = false;
+            boughtSilencer = true;
         }
 
         else if(player.money < 3)
@@ -56,7 +79,7 @@ public class upgradeMenu : MonoBehaviour {
         if (player.money >= 3)
         {
             player.money -= 3;
-            Smoke.enabled = false;
+            boughtSmoke = true;
         }
 
         else if (player.money < 3)
@@ -70,7 +93,7 @@ public class upgradeMenu : MonoBehaviour {
         if (player.money >= 3)
         {
             player.money -= 3;
-            Mine.enabled = false;
+            boughtMine = true;
         }
 
         else if (player.money < 3)
@@ -84,7 +107,7 @@ public class upgradeMenu : MonoBehaviour {
         if(player.money >= 2)
         {
             player.money -= 2;
-            player.bulletDamage += 2;
+            player.bulletDamage += 1;
         }
 
         else if(player.money < 2)
