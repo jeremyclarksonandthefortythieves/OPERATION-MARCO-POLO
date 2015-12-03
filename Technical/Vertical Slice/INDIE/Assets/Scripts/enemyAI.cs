@@ -105,7 +105,7 @@ public class enemyAI : MonoBehaviour {
 		health -= i;
 		if(health <= 0 || !alerted) {
 			health = -1;
-			gameObject.GetComponent<Collider>().enabled = false;
+			gameObject.GetComponent<CapsuleCollider>().enabled = false;
 			gameObject.GetComponent<enemySight>().enabled = false;
 			gameObject.GetComponent<enemyShooting>().enabled = false;
 			gameObject.GetComponent<NavMeshAgent>().enabled = false;

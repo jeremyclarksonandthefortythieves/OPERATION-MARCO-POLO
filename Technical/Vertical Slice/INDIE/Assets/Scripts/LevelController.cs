@@ -35,6 +35,7 @@ public class LevelController : MonoBehaviour {
 	//asyncs load new level in the background
 	//while watching a loading UI
 	public void NextLevel() {
+		gameController.GetComponent<LoadSaveScript>().Save();
 		Application.LoadLevel(Application.loadedLevel + 1);
 
 	}
