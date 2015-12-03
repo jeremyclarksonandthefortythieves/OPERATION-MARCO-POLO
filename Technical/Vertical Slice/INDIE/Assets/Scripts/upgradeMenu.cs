@@ -6,9 +6,17 @@ public class upgradeMenu : MonoBehaviour
 {
 
 	public Canvas upgradeScreen;
-	public Image silencer,
-				 Smoke,
-				 Mine;
+    public Image silencer,
+                 Smoke,
+                 Mine,
+                 silencerDone,
+                 smokeDone,
+                 mineDone,
+                 logo1,
+                 logo2,
+                 logo3,
+                 logo4,
+                 logo5;
 	public Text notEnough,
 				tokens;
 
@@ -22,7 +30,22 @@ public class upgradeMenu : MonoBehaviour
 		notEnough.enabled = false;
 		player = GameObject.FindGameObjectWithTag("GameController").GetComponent<LoadSaveScript>();
 		player.Load();
-	}
+
+        silencerDone.enabled = false;
+        smokeDone.enabled = false;
+        mineDone.enabled = false;
+        logo1 = GameObject.Find("1logo").GetComponent<Image>();
+        logo2 = GameObject.Find("2logo").GetComponent<Image>();
+        logo3 = GameObject.Find("3logo").GetComponent<Image>();
+        logo4 = GameObject.Find("4logo").GetComponent<Image>();
+        logo5 = GameObject.Find("5logo").GetComponent<Image>();
+
+        logo1.enabled = false;
+        logo2.enabled = false;
+        logo3.enabled = false;
+        logo4.enabled = false;
+        logo5.enabled = false;
+    }
 
 	// Update is called once per frame
 	void Update() {
@@ -39,10 +62,10 @@ public class upgradeMenu : MonoBehaviour
 	}
 
 	public void Silencer() {
-		if (player.saveData.money >= 3) {
+		if (player.saveData.money >= 3 && !player.saveData.silencer) {
 			player.saveData.money -= 3;
 			player.saveData.silencer = true;
-			silencer.enabled = false;
+            silencerDone.enabled = true;
 		} else if (player.saveData.money < 3) {
 			notEnough.enabled = true;
 		}
@@ -53,7 +76,7 @@ public class upgradeMenu : MonoBehaviour
 		if (player.saveData.money >= 3) {
 			player.saveData.money -= 3;
 			player.saveData.smoke += 1;
-			Smoke.enabled = false;
+			smokeDone.enabled = true;
 		} else if (player.saveData.money < 3) {
 			notEnough.enabled = true;
 		}
@@ -63,7 +86,7 @@ public class upgradeMenu : MonoBehaviour
 		if (player.saveData.money >= 3) {
 			player.saveData.money -= 3;
 			player.saveData.mine += 1;
-			Mine.enabled = false;
+			mineDone.enabled = true;
 		} else if (player.saveData.money < 3) {
 			notEnough.enabled = true;
 		}
@@ -72,7 +95,8 @@ public class upgradeMenu : MonoBehaviour
 	public void weaponDMGU1() {
 		if (player.saveData.money >= 2) {
 			player.saveData.money -= 2;
-			// player.saveData.bulletDamage += 2;
+            // player.saveData.bulletDamage += 2;
+            logo1.enabled = true;
 		} else if (player.saveData.money < 2) {
 			notEnough.enabled = true;
 		}
