@@ -9,7 +9,6 @@ public class MainMenuScript : MonoBehaviour {
 	void Start() {
 		saveScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<LoadSaveScript>();
 		saveScript.Load();
-		DontDestroyOnLoad(gameObject);
 	}
 
 	public void ContinueGame() {
