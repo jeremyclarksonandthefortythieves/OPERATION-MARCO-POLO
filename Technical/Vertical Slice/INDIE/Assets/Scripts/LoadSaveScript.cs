@@ -11,7 +11,10 @@ public class LoadSaveScript : MonoBehaviour {
 	public SaveData saveData;
 
 	void Awake() {
-		if (!File.Exists(url + fileName)) NewGame();
+
+		if (!File.Exists(url + fileName)) {
+			NewGame();
+		}
 	}
 
 	void createFolder(string folder) {

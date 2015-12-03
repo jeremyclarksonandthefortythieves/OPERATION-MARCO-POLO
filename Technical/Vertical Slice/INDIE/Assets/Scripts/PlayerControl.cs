@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
 	public bool controlsEnabled;
 	public int exp;
 	public GameObject walkieTalkie;
-    public bool hiding;
+	public bool hiding;
 	public int money;
 	public bool sneaking;
 	public GameObject soundTrigger;
@@ -72,6 +72,7 @@ public class PlayerControl : MonoBehaviour
 				hidingObject = null;
 			}
 		}
+		AnimationHandler();
 	}
 
 	//player movement
@@ -100,11 +101,7 @@ public class PlayerControl : MonoBehaviour
 
 
 		rb.velocity = moveDirection;
-		if (GetComponent<Rigidbody>().velocity.magnitude < 0.5f) {
-			anim.SetBool("Walking", false);
-		} else {
-			anim.SetBool("Walking", true);
-		}
+		
 
 		moveDirection = new Vector3(0, 0, 0);
 
@@ -116,69 +113,13 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
-	//instantiates a gameobject which he shoots forward
-	void Shoot(string type) {
-		switch (type) {
-			case "bullet":
-				GameObject _bullet = Instantiate(bullet, transform.position + transform.forward + transform.up, transform.rotation) as GameObject;
-				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
-				_bullet.GetComponent<BulletScript>().shotFromPlayer = true;
-				_bullet.GetComponent<BulletScript>().damage = Mathf.RoundToInt(bulletDamage);
-
-				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
-				GetComponent<AudioSource>().Play();
-				soundTrig.GetComponent<SphereCollider>().radius = 5f;
-				break;
-			case "smoke":
-				GameObject smokeNade = Instantiate(smokeGrenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
-				smokeNade.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
-				break;
-
-			case "distraction":
-				GameObject disMine = Instantiate(distractionMine, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
-				disMine.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
-				break;
-
-		}
-	}
-
-	void Hide(GameObject obj) {
-		controlsEnabled = false;
-		gameObject.GetComponent<MeshRenderer>().enabled = false;
-	}
-	
-	//player gets exp for completing objectives		
-	//if he completes 2 he gets a token(money) to buy upgrades
-	public void GetExp() {
-		exp += 1;
-		if (exp >= 2) {
-			exp = 0;
-			money += 1;
-		}
-
-	}
-
-	
-	void OnTriggerEnter(Collider coll) {
-		if(coll.gameObject.tag == "EndLevel") {
-			gameController.GetComponent<LevelController>().CompleteLevel();
-
-		}
-	}
-
 	/*every frame checks if the player is looking at an interactive object
 	  if so he press E and he will use that object
 	  */
-
-	public void GetDamage() {
-		health -= 1;
-		if (health <= 0) Application.LoadLevel(Application.loadedLevel);
-	}
-
 	void InteractiveObject() {
 		Vector3 forward = transform.TransformDirection(Vector3.forward);
 		RaycastHit hitInfo;
-		if (Physics.Raycast(transform.position + (transform.up*0.5f), forward, out hitInfo, 1f)) {
+		if (Physics.Raycast(transform.position + (transform.up * 0.5f), forward, out hitInfo, 1f)) {
 			switch (hitInfo.collider.gameObject.tag) {
 				case "LootAble":
 					if (Input.GetKey(KeyCode.E)) {
@@ -201,7 +142,7 @@ public class PlayerControl : MonoBehaviour
 
 						hitInfo.collider.gameObject.GetComponent<TerminalScript>().UseTerminal();
 					}
-				break;
+					break;
 				case "HidingObject":
 					if (Input.GetKey(KeyCode.E) && !hiding) {
 						hidingObject = hitInfo.collider.gameObject;
@@ -228,4 +169,117 @@ public class PlayerControl : MonoBehaviour
 			}
 		}
 	}
+
+	void AnimationHandler() {
+		if (sneaking) {
+			anim.SetBool("Crouching", true);
+		} else {
+			anim.SetBool("Crouching", false);
+		}
+		Vector3 vel = GetComponent<Rigidbody>().velocity;
+
+		if (vel.magnitude > 0.5f) {
+			anim.SetBool("Walking", true);
+
+			//checks with dot product if character moves right,left,forward or backwards
+			//Forwards, Direction 1
+			if (Vector3.Dot(vel, transform.forward) > Vector3.Dot(vel, transform.right) &&
+				Vector3.Dot(vel, transform.forward) > Vector3.Dot(vel, -transform.right) &&
+				Vector3.Dot(vel, transform.forward) > Vector3.Dot(vel, -transform.forward)) {
+				anim.SetInteger("Direction", 1);
+
+			}
+			//Backwards, Direction 2
+			if (Vector3.Dot(vel, -transform.forward) > Vector3.Dot(vel, transform.right) &&
+				Vector3.Dot(vel, -transform.forward) > Vector3.Dot(vel, -transform.right) &&
+				Vector3.Dot(vel, -transform.forward) > Vector3.Dot(vel, transform.forward)) {
+				anim.SetInteger("Direction", 2);
+			}
+			//Right, Direction 3
+			if (Vector3.Dot(vel, transform.right) > Vector3.Dot(vel, -transform.right) &&
+				Vector3.Dot(vel, transform.right) > Vector3.Dot(vel, -transform.forward) &&
+				Vector3.Dot(vel, transform.right) > Vector3.Dot(vel, transform.forward)) {
+				anim.SetInteger("Direction", 3);
+
+			}
+			//Left, Direction 4
+			if (Vector3.Dot(vel, -transform.right) > Vector3.Dot(vel, transform.right) &&
+				Vector3.Dot(vel, -transform.right) > Vector3.Dot(vel, -transform.forward) &&
+				Vector3.Dot(vel, -transform.right) > Vector3.Dot(vel, transform.forward)) {
+				anim.SetInteger("Direction", 4);
+			}
+
+		} else {
+			anim.SetBool("Walking", false);
+		}
+
+
+
+	}
+
+	//instantiates a gameobject which he shoots forward
+	void Shoot(string type) {
+		switch (type) {
+			case "bullet":
+				GameObject _bullet = Instantiate(bullet, transform.position + transform.forward + transform.up, transform.rotation) as GameObject;
+				_bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
+				_bullet.GetComponent<BulletScript>().shotFromPlayer = true;
+				_bullet.GetComponent<BulletScript>().damage = Mathf.RoundToInt(bulletDamage);
+
+				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
+				GetComponent<AudioSource>().Play();
+				if (silencerEnabled) {
+					soundTrig.GetComponent<SphereCollider>().radius = 5f;
+				} else {
+					soundTrig.GetComponent<SphereCollider>().radius = 1f;
+				}
+
+				break;
+			case "smoke":
+				GameObject smokeNade = Instantiate(smokeGrenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
+				smokeNade.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
+				break;
+
+			case "distraction":
+				GameObject disMine = Instantiate(distractionMine, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
+				disMine.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
+				break;
+
+		}
+	}
+
+
+
+	//void Hide(GameObject obj) {
+	//	controlsEnabled = false;
+	//	gameObject.GetComponent<MeshRenderer>().enabled = false;
+	//}
+
+	//player gets exp for completing objectives		
+	//if he completes 2 he gets a token(money) to buy upgrades
+	public void GetExp() {
+		exp += 1;
+		if (exp >= 2) {
+			exp = 0;
+			money += 1;
+		}
+
+	}
+
+
+	void OnTriggerEnter(Collider coll) {
+		if (coll.gameObject.tag == "EndLevel") {
+			gameController.GetComponent<LevelController>().CompleteLevel();
+
+		}
+	}
+
+	
+
+	public void GetDamage() {
+		health -= 1;
+		if (health <= 0) Application.LoadLevel(Application.loadedLevel);
+	}
+
+
 }
