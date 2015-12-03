@@ -5,14 +5,15 @@ public class enemyShooting : MonoBehaviour {
 
     public GameObject bullet;
     public bool canShoot = false;
+    public int ammo = 12;
+    public float reloadSpeed = 3.0f;
 
     private SphereCollider col;
     private Transform player;
     private bool shooting;
     private enemySight sight;
-    public float reloadSpeed = 3.0f;
     private float rateofFire = 1.5f;
-    public int ammo = 12;
+   
 
 
     void Awake()
@@ -50,7 +51,7 @@ public class enemyShooting : MonoBehaviour {
         
     }
 
-    public void ShootAI()
+    void ShootAI()
     { 
         
         float fractionalDistance = (col.radius - Vector3.Distance(transform.position, player.position)) / col.radius;
@@ -63,9 +64,4 @@ public class enemyShooting : MonoBehaviour {
 		GetComponent<AudioSource>().Play();
     }
 
-
-    void ShotEffects()
-    {
-        
-    }
 }

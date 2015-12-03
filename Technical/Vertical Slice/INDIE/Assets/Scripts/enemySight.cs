@@ -14,7 +14,7 @@ public class enemySight : MonoBehaviour
 	private LastPlayerSighting lastPlayerSighting;
 	private GameObject player;
 	private Vector3 previousSighting;
-
+    
 	// Use this for initialization
 	void Awake() {
 		navAgent = GetComponent<NavMeshAgent>();
