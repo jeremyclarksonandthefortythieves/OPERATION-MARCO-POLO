@@ -51,12 +51,11 @@ public class enemySight : MonoBehaviour
 
 			playerInSight = false;
             allowFire = false;
-
+            
             float dist = Vector3.Distance(transform.position, other.gameObject.transform.position);
 			Vector3 dir = other.gameObject.transform.position - transform.position;
 			float angle = Vector3.Angle(dir.normalized * dist, transform.forward);
-
-			if (other.gameObject.GetComponent<PlayerControl>().sneaking == false) {
+            if (other.gameObject.GetComponent<PlayerControl>().sneaking == false) {
 				personalLastSighting = other.gameObject.transform.position;
 
 			}
