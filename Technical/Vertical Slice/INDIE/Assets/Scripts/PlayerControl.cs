@@ -126,6 +126,7 @@ public class PlayerControl : MonoBehaviour
 				_bullet.GetComponent<BulletScript>().damage = Mathf.RoundToInt(bulletDamage);
 
 				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
+				GetComponent<AudioSource>().Play();
 				soundTrig.GetComponent<SphereCollider>().radius = 5f;
 				break;
 			case "smoke":
@@ -206,6 +207,7 @@ public class PlayerControl : MonoBehaviour
 						hidingObject = hitInfo.collider.gameObject;
 						hiding = true;
 						controlsEnabled = false;
+						if (Application.loadedLevel == 3) gameController.GetComponent<LevelController>().noKills = true;
 						MeshRenderer[] mesh = gameObject.GetComponentsInChildren<MeshRenderer>();
 						foreach (MeshRenderer m in mesh) {
 							m.enabled = false;

@@ -59,8 +59,8 @@ public class enemyShooting : MonoBehaviour {
             _bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750f);
             ammo--;
             canShoot = false;
-            rateofFire = 1.5f;            
-            
+            rateofFire = 1.5f;
+		GetComponent<AudioSource>().Play();
     }
 
 

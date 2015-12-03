@@ -537,8 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880cfc81dd1e5d2449c2e8c7d4d7f1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noDetection: 1
-  noKills: 1
+  noDetection: 0
+  noKills: 0
   loadUI: {fileID: 0}
 --- !u!82 &347285134
 AudioSource:
@@ -2169,8 +2169,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -50}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 150, y: -50.0999985}
+  m_SizeDelta: {x: 161.300003, y: 58.2000008}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &771159535
 MonoBehaviour:
@@ -2192,8 +2192,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 0255c1cc570bb6a4db025b8e8f494fac, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3267,8 +3267,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 0255c1cc570bb6a4db025b8e8f494fac, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3299,8 +3299,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -80}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 150, y: -94.5999985}
+  m_SizeDelta: {x: 161.300003, y: 58.2000008}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1439249718
 GameObject:
@@ -5260,8 +5260,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 0255c1cc570bb6a4db025b8e8f494fac, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -5292,8 +5292,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -100}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 150, y: -126.599998}
+  m_SizeDelta: {x: 161.300003, y: 58.2000008}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &2095999172
 Prefab:
@@ -5374,7 +5374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 426900, guid: 87da1c7cad492e945b0f7105c74080a0, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87da1c7cad492e945b0f7105c74080a0, type: 2}

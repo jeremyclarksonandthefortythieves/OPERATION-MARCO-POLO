@@ -76,6 +76,8 @@ public class TerminalScript : MonoBehaviour {
 
 	//opens the linked door
 	public void OpenDoor() {
+		if (Application.loadedLevel == 3) GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().noDetection = true;
+
 		locked = false;
 		active = false;
 		Destroy(terminalUI);

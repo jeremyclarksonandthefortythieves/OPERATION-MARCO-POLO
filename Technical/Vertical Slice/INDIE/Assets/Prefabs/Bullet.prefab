@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundTrig: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
+  shotFromPlayer: 0
+  damage: 1
 --- !u!135 &13519716
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -145,6 +147,10 @@ Prefab:
       propertyPath: soundTrig
       value: 
       objectReference: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 251dfca3deb373b4c97708abdd2b6079, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145684}
