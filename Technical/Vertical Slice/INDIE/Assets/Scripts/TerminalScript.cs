@@ -25,7 +25,6 @@ public class TerminalScript : MonoBehaviour {
 		password[0] = getRandom.Next(10);
 		password[1] = getRandom.Next(10);
 		password[2] = getRandom.Next(10);
-		Debug.Log(GetPassword());
 		//searches for objects that show the password. if ID is the same as the terminal change password of the password object to this one 
 		player = GameObject.FindGameObjectWithTag("Player");
 		passwordObjects = GameObject.FindGameObjectsWithTag("Password");

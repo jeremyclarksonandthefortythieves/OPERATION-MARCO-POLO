@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
 	private ArrayList[] keyCodes;
 	private GameObject hidingObject;
 	private GameObject gameController;
-	private int health = 2;
+	private int health = 1;
 	private Animator anim;
 
 	//upgrades
@@ -52,7 +52,6 @@ public class PlayerControl : MonoBehaviour
 			Control();
 			InteractiveObject();
 		} else {
-			Debug.Log("no controls");
 			anim.SetBool("Walking", false);
 
 			//press E again to 
@@ -172,7 +171,7 @@ public class PlayerControl : MonoBehaviour
 
 	public void GetDamage() {
 		health -= 1;
-		if (health <= 0) Debug.Log("gameover");
+		if (health <= 0) Application.LoadLevel(Application.loadedLevel);
 	}
 
 	void InteractiveObject() {

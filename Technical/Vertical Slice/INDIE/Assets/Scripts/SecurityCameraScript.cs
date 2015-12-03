@@ -14,7 +14,6 @@ public class SecurityCameraScript : MonoBehaviour {
 			float angle = Vector3.Angle(dir.normalized * dist, transform.forward);
 
 			if (angle < 80 * 0.5f) {
-				Debug.Log("in vison camera");
 			}
 		}
 	}

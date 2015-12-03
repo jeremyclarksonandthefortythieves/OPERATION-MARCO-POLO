@@ -32,7 +32,6 @@ public class enemyAI : MonoBehaviour {
 		EnemySight = GetComponent<enemySight> ();
 		navAgent = GetComponent<NavMeshAgent> ();
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
-		Debug.Log(player.gameObject.transform.position);
 		lastPlayerSighting = GameObject.FindGameObjectWithTag ("GameController").GetComponent<LastPlayerSighting> ();
 
 	}
@@ -73,15 +72,15 @@ public class enemyAI : MonoBehaviour {
 				} else {
 					wayPoint = 0;
 				}
-				navAgent.destination = wayPoints[wayPoint].transform.position;
 				patrolTimer = 0f;
+				navAgent.destination = wayPoints[wayPoint].transform.position;
 			}
 		}
 	}
 
 	void Chase(){
 		Vector3 sightingDeltaPos = EnemySight.personalLastSighting - transform.position;
-		if (sightingDeltaPos.sqrMagnitude > 4f)
+		if (sightingDeltaPos.sqrMagnitude > 2f)
 			navAgent.destination = EnemySight.personalLastSighting;
 
             navAgent.stoppingDistance = 4;

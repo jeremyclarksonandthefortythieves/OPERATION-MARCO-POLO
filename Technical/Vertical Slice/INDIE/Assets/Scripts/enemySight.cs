@@ -48,7 +48,6 @@ public class enemySight : MonoBehaviour
 
 	void OnTriggerStay(Collider other) {
 		if (other.gameObject.tag == "Player") {
-			Debug.Log("player touch");
 
 			playerInSight = false;
             allowFire = false;
@@ -57,10 +56,11 @@ public class enemySight : MonoBehaviour
 			Vector3 dir = other.gameObject.transform.position - transform.position;
 			float angle = Vector3.Angle(dir.normalized * dist, transform.forward);
 
-			if (other.gameObject.GetComponent<PlayerControl>().sneaking == false && other.gameObject.GetComponent<PlayerControl>().hiding == false ) {
+			if (other.gameObject.GetComponent<PlayerControl>().sneaking == false) {
 				personalLastSighting = other.gameObject.transform.position;
+
 			}
-            // Checks if player is inside the field of view
+			// Checks if player is inside the field of view
 			if (angle < fieldOfView * 0.5f) {
 				RaycastHit hit;
                 // Raycast from enemy to direction of player inside enemy's collider
