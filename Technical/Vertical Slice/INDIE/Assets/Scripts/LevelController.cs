@@ -27,7 +27,7 @@ public class LevelController : MonoBehaviour {
 		if (noKills) {
 			player.GetComponent<PlayerControl>().GetExp();
 			Debug.Log("completed without kills!");
-0		}
+		}
 		NextLevel();
 		//spawns the upgrade menu here with button for next level
 	}

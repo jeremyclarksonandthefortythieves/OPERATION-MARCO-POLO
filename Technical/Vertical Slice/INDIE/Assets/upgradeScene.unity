@@ -2282,6 +2282,14 @@ MonoBehaviour:
   silencer: {fileID: 284212358}
   Smoke: {fileID: 820342841}
   Mine: {fileID: 429834838}
+  silencerDone: {fileID: 323361543}
+  smokeDone: {fileID: 1350810389}
+  mineDone: {fileID: 645185361}
+  logo1: {fileID: 0}
+  logo2: {fileID: 0}
+  logo3: {fileID: 0}
+  logo4: {fileID: 0}
+  logo5: {fileID: 0}
   notEnough: {fileID: 1488918745}
   tokens: {fileID: 1042864304}
 --- !u!4 &1356001337
