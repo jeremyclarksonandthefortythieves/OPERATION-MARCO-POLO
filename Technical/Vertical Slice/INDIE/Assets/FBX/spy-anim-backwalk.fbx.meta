@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f67e5cffb6506a0469e75f3255903c9f
-timeCreated: 1449075581
+guid: 2f7930c4b04a74c42bac6bd9e8f19dce
+timeCreated: 1449167308
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -193,7 +193,8 @@ ModelImporter:
     4300006: handgun:polySurface1
     4300008: polySurface20
     4300010: polySurface19
-    7400000: Take 001
+    7400000: Walking Back
+    7400002: Take 0010
     9500000: //RootNode
     13700000: polySurface18
     13700002: polySurface4
@@ -211,8 +212,10 @@ ModelImporter:
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
       improve retargeting quality.\n\t'rig:BeastBaseMesh:Spine' has translation animation
       that will be discarded.\n\t'rig:BeastBaseMesh:Spine1' has translation animation
+      that will be discarded.\n\t'rig:BeastBaseMesh:Spine2' has translation animation
       that will be discarded.\n\t'rig:BeastBaseMesh:Spine2' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'rig:BeastBaseMesh:LeftUpLeg'
+      transforms and has rotation animation that will be discarded.\n\t'rig:BeastBaseMesh:Neck'
+      has translation animation that will be discarded.\n\t'rig:BeastBaseMesh:LeftUpLeg'
       has translation animation that will be discarded.\n\t'rig:BeastBaseMesh:RightUpLeg'
       has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
@@ -223,7 +226,407 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walking Back
+      takeName: Take 001
+      firstFrame: 215
+      lastFrame: 235
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 0
+      - path: group/pasted__Human
+        weight: 0
+      - path: group/pasted__pCylinder7
+        weight: 0
+      - path: group/pasted__polySurface9
+        weight: 0
+      - path: group/pasted__polySurface9/pasted__transform2
+        weight: 0
+      - path: group/pasted__pPlane2
+        weight: 0
+      - path: group/pasted__pPlane2/pasted__transform1
+        weight: 0
+      - path: Human
+        weight: 0
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot/polySurface20
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot/rig:BeastBaseMesh:LeftToeBase
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot/rig:BeastBaseMesh:LeftToeBase/rig:BeastBaseMesh:LeftToe_End
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot/polySurface19
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot/rig:BeastBaseMesh:RightToeBase
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot/rig:BeastBaseMesh:RightToeBase/rig:BeastBaseMesh:RightToe_End
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/handgun:polySurface1
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1/rig:BeastBaseMesh:LeftHandIndex2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1/rig:BeastBaseMesh:LeftHandIndex2/rig:BeastBaseMesh:LeftHandIndex3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1/rig:BeastBaseMesh:LeftHandIndex2/rig:BeastBaseMesh:LeftHandIndex3/rig:BeastBaseMesh:LeftHandIndex4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1/rig:BeastBaseMesh:LeftHandMiddle2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1/rig:BeastBaseMesh:LeftHandMiddle2/rig:BeastBaseMesh:LeftHandMiddle3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1/rig:BeastBaseMesh:LeftHandMiddle2/rig:BeastBaseMesh:LeftHandMiddle3/rig:BeastBaseMesh:LeftHandMiddle4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1/rig:BeastBaseMesh:LeftHandPinky2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1/rig:BeastBaseMesh:LeftHandPinky2/rig:BeastBaseMesh:LeftHandPinky3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1/rig:BeastBaseMesh:LeftHandPinky2/rig:BeastBaseMesh:LeftHandPinky3/rig:BeastBaseMesh:LeftHandPinky4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1/rig:BeastBaseMesh:LeftHandRing2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1/rig:BeastBaseMesh:LeftHandRing2/rig:BeastBaseMesh:LeftHandRing3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1/rig:BeastBaseMesh:LeftHandRing2/rig:BeastBaseMesh:LeftHandRing3/rig:BeastBaseMesh:LeftHandRing4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1/rig:BeastBaseMesh:LeftHandThumb2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1/rig:BeastBaseMesh:LeftHandThumb2/rig:BeastBaseMesh:LeftHandThumb3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1/rig:BeastBaseMesh:LeftHandThumb2/rig:BeastBaseMesh:LeftHandThumb3/rig:BeastBaseMesh:LeftHandThumb4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck/rig:BeastBaseMesh:Head
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck/rig:BeastBaseMesh:Head/polySurface21
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck/rig:BeastBaseMesh:Head/rig:BeastBaseMesh:HeadTop_End
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1/rig:BeastBaseMesh:RightHandIndex2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1/rig:BeastBaseMesh:RightHandIndex2/rig:BeastBaseMesh:RightHandIndex3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1/rig:BeastBaseMesh:RightHandIndex2/rig:BeastBaseMesh:RightHandIndex3/rig:BeastBaseMesh:RightHandIndex4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1/rig:BeastBaseMesh:RightHandMiddle2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1/rig:BeastBaseMesh:RightHandMiddle2/rig:BeastBaseMesh:RightHandMiddle3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1/rig:BeastBaseMesh:RightHandMiddle2/rig:BeastBaseMesh:RightHandMiddle3/rig:BeastBaseMesh:RightHandMiddle4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1/rig:BeastBaseMesh:RightHandPinky2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1/rig:BeastBaseMesh:RightHandPinky2/rig:BeastBaseMesh:RightHandPinky3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1/rig:BeastBaseMesh:RightHandPinky2/rig:BeastBaseMesh:RightHandPinky3/rig:BeastBaseMesh:RightHandPinky4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1/rig:BeastBaseMesh:RightHandRing2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1/rig:BeastBaseMesh:RightHandRing2/rig:BeastBaseMesh:RightHandRing3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1/rig:BeastBaseMesh:RightHandRing2/rig:BeastBaseMesh:RightHandRing3/rig:BeastBaseMesh:RightHandRing4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1/rig:BeastBaseMesh:RightHandThumb2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1/rig:BeastBaseMesh:RightHandThumb2/rig:BeastBaseMesh:RightHandThumb3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1/rig:BeastBaseMesh:RightHandThumb2/rig:BeastBaseMesh:RightHandThumb3/rig:BeastBaseMesh:RightHandThumb4
+        weight: 0
+      - path: nurbsCircle2
+        weight: 0
+      - path: pCylinder7
+        weight: 0
+      - path: polySurface4
+        weight: 0
+      - path: polySurface9
+        weight: 0
+      - path: polySurface9/transform2
+        weight: 0
+      - path: polySurface18
+        weight: 0
+      - path: pPlane2
+        weight: 0
+      - path: pPlane2/transform1
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Take 0010
+      takeName: Take 001
+      firstFrame: 235
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 0
+      - path: group/pasted__Human
+        weight: 0
+      - path: group/pasted__pCylinder7
+        weight: 0
+      - path: group/pasted__polySurface9
+        weight: 0
+      - path: group/pasted__polySurface9/pasted__transform2
+        weight: 0
+      - path: group/pasted__pPlane2
+        weight: 0
+      - path: group/pasted__pPlane2/pasted__transform1
+        weight: 0
+      - path: Human
+        weight: 0
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot/polySurface20
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot/rig:BeastBaseMesh:LeftToeBase
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:LeftUpLeg/rig:BeastBaseMesh:LeftLeg/rig:BeastBaseMesh:LeftFoot/rig:BeastBaseMesh:LeftToeBase/rig:BeastBaseMesh:LeftToe_End
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot/polySurface19
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot/rig:BeastBaseMesh:RightToeBase
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:RightUpLeg/rig:BeastBaseMesh:RightLeg/rig:BeastBaseMesh:RightFoot/rig:BeastBaseMesh:RightToeBase/rig:BeastBaseMesh:RightToe_End
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/handgun:polySurface1
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1/rig:BeastBaseMesh:LeftHandIndex2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1/rig:BeastBaseMesh:LeftHandIndex2/rig:BeastBaseMesh:LeftHandIndex3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandIndex1/rig:BeastBaseMesh:LeftHandIndex2/rig:BeastBaseMesh:LeftHandIndex3/rig:BeastBaseMesh:LeftHandIndex4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1/rig:BeastBaseMesh:LeftHandMiddle2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1/rig:BeastBaseMesh:LeftHandMiddle2/rig:BeastBaseMesh:LeftHandMiddle3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandMiddle1/rig:BeastBaseMesh:LeftHandMiddle2/rig:BeastBaseMesh:LeftHandMiddle3/rig:BeastBaseMesh:LeftHandMiddle4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1/rig:BeastBaseMesh:LeftHandPinky2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1/rig:BeastBaseMesh:LeftHandPinky2/rig:BeastBaseMesh:LeftHandPinky3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandPinky1/rig:BeastBaseMesh:LeftHandPinky2/rig:BeastBaseMesh:LeftHandPinky3/rig:BeastBaseMesh:LeftHandPinky4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1/rig:BeastBaseMesh:LeftHandRing2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1/rig:BeastBaseMesh:LeftHandRing2/rig:BeastBaseMesh:LeftHandRing3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandRing1/rig:BeastBaseMesh:LeftHandRing2/rig:BeastBaseMesh:LeftHandRing3/rig:BeastBaseMesh:LeftHandRing4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1/rig:BeastBaseMesh:LeftHandThumb2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1/rig:BeastBaseMesh:LeftHandThumb2/rig:BeastBaseMesh:LeftHandThumb3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:LeftShoulder/rig:BeastBaseMesh:LeftArm/rig:BeastBaseMesh:LeftForeArm/rig:BeastBaseMesh:LeftHand/rig:BeastBaseMesh:LeftHandThumb1/rig:BeastBaseMesh:LeftHandThumb2/rig:BeastBaseMesh:LeftHandThumb3/rig:BeastBaseMesh:LeftHandThumb4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck/rig:BeastBaseMesh:Head
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck/rig:BeastBaseMesh:Head/polySurface21
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:Neck/rig:BeastBaseMesh:Head/rig:BeastBaseMesh:HeadTop_End
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1/rig:BeastBaseMesh:RightHandIndex2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1/rig:BeastBaseMesh:RightHandIndex2/rig:BeastBaseMesh:RightHandIndex3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandIndex1/rig:BeastBaseMesh:RightHandIndex2/rig:BeastBaseMesh:RightHandIndex3/rig:BeastBaseMesh:RightHandIndex4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1/rig:BeastBaseMesh:RightHandMiddle2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1/rig:BeastBaseMesh:RightHandMiddle2/rig:BeastBaseMesh:RightHandMiddle3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandMiddle1/rig:BeastBaseMesh:RightHandMiddle2/rig:BeastBaseMesh:RightHandMiddle3/rig:BeastBaseMesh:RightHandMiddle4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1/rig:BeastBaseMesh:RightHandPinky2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1/rig:BeastBaseMesh:RightHandPinky2/rig:BeastBaseMesh:RightHandPinky3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandPinky1/rig:BeastBaseMesh:RightHandPinky2/rig:BeastBaseMesh:RightHandPinky3/rig:BeastBaseMesh:RightHandPinky4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1/rig:BeastBaseMesh:RightHandRing2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1/rig:BeastBaseMesh:RightHandRing2/rig:BeastBaseMesh:RightHandRing3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandRing1/rig:BeastBaseMesh:RightHandRing2/rig:BeastBaseMesh:RightHandRing3/rig:BeastBaseMesh:RightHandRing4
+        weight: 0
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1/rig:BeastBaseMesh:RightHandThumb2
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1/rig:BeastBaseMesh:RightHandThumb2/rig:BeastBaseMesh:RightHandThumb3
+        weight: 1
+      - path: nurbsCircle1/rig:BeastBaseMesh:Hips/rig:BeastBaseMesh:Spine/rig:BeastBaseMesh:Spine1/rig:BeastBaseMesh:Spine2/rig:BeastBaseMesh:RightShoulder/rig:BeastBaseMesh:RightArm/rig:BeastBaseMesh:RightForeArm/rig:BeastBaseMesh:RightHand/rig:BeastBaseMesh:RightHandThumb1/rig:BeastBaseMesh:RightHandThumb2/rig:BeastBaseMesh:RightHandThumb3/rig:BeastBaseMesh:RightHandThumb4
+        weight: 0
+      - path: nurbsCircle2
+        weight: 0
+      - path: pCylinder7
+        weight: 0
+      - path: polySurface4
+        weight: 0
+      - path: polySurface9
+        weight: 0
+      - path: polySurface9/transform2
+        weight: 0
+      - path: polySurface18
+        weight: 0
+      - path: pPlane2
+        weight: 0
+      - path: pPlane2/transform1
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -246,7 +649,7 @@ ModelImporter:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -644,7 +1047,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: spy-anim (1)(Clone)
+    - name: spy-anim-backwalk(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
