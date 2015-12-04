@@ -80,7 +80,8 @@ public class enemyAI : MonoBehaviour {
 
 	void Chase(){
 		Vector3 sightingDeltaPos = EnemySight.personalLastSighting - transform.position;
-		if (sightingDeltaPos.sqrMagnitude > 4f)
+        navAgent.stoppingDistance = 0.5f;
+        if (sightingDeltaPos.sqrMagnitude > 4f)
 			navAgent.destination = EnemySight.personalLastSighting;
 
             navAgent.stoppingDistance = 3;
