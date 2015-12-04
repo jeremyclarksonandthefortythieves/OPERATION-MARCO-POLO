@@ -460,6 +460,7 @@ MonoBehaviour:
     silencer: 0
     smoke: 0
     mine: 0
+    bulletDamage: 0
     currentLevel: 0
 --- !u!114 &865730509
 MonoBehaviour:

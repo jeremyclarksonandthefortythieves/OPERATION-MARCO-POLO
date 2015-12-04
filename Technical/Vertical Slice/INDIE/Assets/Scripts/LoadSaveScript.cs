@@ -34,6 +34,7 @@ public class LoadSaveScript : MonoBehaviour {
 		saveData.mine = 0;
 		saveData.smoke = 0;
 		saveData.silencer = false;
+        saveData.bulletDamage = 2.0f;
 
 		saveData.currentLevel = 1;
 
@@ -54,6 +55,7 @@ public class LoadSaveScript : MonoBehaviour {
 		saveData.mine = player.distractionAmount;
 		saveData.smoke = player.smokeAmount;
 		saveData.silencer = false;
+        saveData.bulletDamage = player.bulletDamage;
 
 
 		saveData.currentLevel = Application.loadedLevel;

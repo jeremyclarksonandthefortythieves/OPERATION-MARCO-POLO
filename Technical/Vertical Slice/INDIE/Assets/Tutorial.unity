@@ -1268,6 +1268,7 @@ MonoBehaviour:
     silencer: 0
     smoke: 0
     mine: 0
+    bulletDamage: 0
     currentLevel: 0
 --- !u!4 &347285132
 Transform:
@@ -1292,8 +1293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880cfc81dd1e5d2449c2e8c7d4d7f1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noDetection: 0
-  noKills: 0
+  obj1UI: {fileID: 0}
+  obj2UI: {fileID: 0}
   fadePanel: {fileID: 155618, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
 --- !u!82 &347285134
 AudioSource:
@@ -1461,6 +1462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouch: {fileID: 1257266491}
   stand: {fileID: 1257266490}
+  smoke: {fileID: 1257266493}
+  mine: {fileID: 1257266492}
 --- !u!1001 &355235504
 Prefab:
   m_ObjectHideFlags: 0
@@ -5199,6 +5202,18 @@ MonoBehaviour:
 --- !u!114 &1257266491 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400510, guid: 482b3f844e13e6144979f856211204d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257266489}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1257266492 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400932, guid: 482b3f844e13e6144979f856211204d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257266489}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1257266493 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11498730, guid: 482b3f844e13e6144979f856211204d6,
     type: 2}
   m_PrefabInternal: {fileID: 1257266489}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}

@@ -96,14 +96,70 @@ public class upgradeMenu : MonoBehaviour
 	public void weaponDMGU1() {
 		if (player.saveData.money >= 2) {
 			player.saveData.money -= 2;
-            // player.saveData.bulletDamage += 2;
+           // player.saveData.bulletDamage *= 1.2f;
             logo1.enabled = true;
 		} else if (player.saveData.money < 2) {
 			notEnough.enabled = true;
 		}
 	}
 
-	public void NextLevel() {
+    public void weaponDMGU2()
+    {
+        if (player.saveData.money >= 3)
+        {
+            player.saveData.money -= 3;
+            //player.saveData.bulletDamage *= 1.2f;
+            logo1.enabled = true;
+        }
+        else if (player.saveData.money < 3)
+        {
+            notEnough.enabled = true;
+        }
+    }
+
+    public void weaponDMGU3()
+    {
+        if (player.saveData.money >= 4)
+        {
+            player.saveData.money -= 4;
+            //  player.saveData.bulletDamage *= 1.2f;
+            logo1.enabled = true;
+        }
+        else if (player.saveData.money < 4)
+        {
+            notEnough.enabled = true;
+        }
+    }
+
+    public void weaponDMGU4()
+    {
+        if (player.saveData.money >= 5)
+        {
+            player.saveData.money -= 5;
+            //  player.saveData.bulletDamage *= 1.2f;
+            logo1.enabled = true;
+        }
+        else if (player.saveData.money < 5)
+        {
+            notEnough.enabled = true;
+        }
+    }
+
+    public void weaponDMGU5()
+    {
+        if (player.saveData.money >= 6)
+        {
+            player.saveData.money -= 6;
+            //  player.saveData.bulletDamage *= 1.2f;
+            logo1.enabled = true;
+        }
+        else if (player.saveData.money < 6)
+        {
+            notEnough.enabled = true;
+        }
+    }
+
+    public void NextLevel() {
 		player.SaveInUI();
 		Application.LoadLevel(Application.loadedLevel + 1);
 	}

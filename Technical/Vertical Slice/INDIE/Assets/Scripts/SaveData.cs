@@ -13,6 +13,7 @@ public class SaveData
 	public bool silencer;
 	public int smoke;
 	public int mine;
+    public float bulletDamage;
 
 	public int currentLevel;
 }

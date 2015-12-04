@@ -610,6 +610,7 @@ MonoBehaviour:
     silencer: 0
     smoke: 0
     mine: 0
+    bulletDamage: 0
     currentLevel: 0
 --- !u!4 &347285132
 Transform:
@@ -790,6 +791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouch: {fileID: 58175497}
   stand: {fileID: 58175496}
+  smoke: {fileID: 637879196}
+  mine: {fileID: 1392069284}
 --- !u!114 &347285137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,6 +1823,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631717022}
+--- !u!114 &637879196 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11498730, guid: 482b3f844e13e6144979f856211204d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 58175495}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &645017119
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,6 +3514,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 456290, guid: 8298c8dd7319a8a40aacb77b925b7c50, type: 2}
   m_PrefabInternal: {fileID: 1496735434}
+--- !u!114 &1392069284 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400932, guid: 482b3f844e13e6144979f856211204d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 58175495}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1415733820
 GameObject:
   m_ObjectHideFlags: 0
@@ -5792,7 +5807,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22464252, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 22464252, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -5834,6 +5849,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11453710, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 347285137}
+    - target: {fileID: 11400406, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 347285137}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
   m_IsPrefabParent: 0

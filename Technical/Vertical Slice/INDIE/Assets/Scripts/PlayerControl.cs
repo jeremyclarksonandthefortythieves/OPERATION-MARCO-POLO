@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
 	private Animator anim;
 
 	//upgrades
-	public float bulletDamage;
+	public float bulletDamage = 2.0f;
 	public bool silencerEnabled;
 	public int smokeAmount = 0;
 	public int distractionAmount = 0;
@@ -271,7 +271,7 @@ public class PlayerControl : MonoBehaviour
 		exp += 2;
 		if (exp >= 2) {
 			exp = 0;
-			money += 1;
+			money += 3;
 		}
 
 	}

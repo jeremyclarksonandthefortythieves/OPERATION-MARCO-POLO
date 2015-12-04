@@ -2636,6 +2636,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400406, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2050523606}
+    - target: {fileID: 11400406, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: pauseContinue
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453710, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2050523606}
+    - target: {fileID: 11453710, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: pauseExit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47891e585b3b5ee4b9760ddf6095c4fe, type: 2}
   m_IsPrefabParent: 0
@@ -6636,6 +6652,18 @@ Prefab:
     - {fileID: 11437640, guid: 482b3f844e13e6144979f856211204d6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 482b3f844e13e6144979f856211204d6, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1052262685 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400932, guid: 482b3f844e13e6144979f856211204d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1052262684}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1052262686 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11498730, guid: 482b3f844e13e6144979f856211204d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1052262684}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1069190721
 GameObject:
   m_ObjectHideFlags: 0
@@ -12121,6 +12149,7 @@ MonoBehaviour:
     silencer: 0
     smoke: 0
     mine: 0
+    bulletDamage: 0
     currentLevel: 0
 --- !u!4 &2050523603
 Transform:
@@ -12217,6 +12246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouch: {fileID: 204978744}
   stand: {fileID: 875417135}
+  smoke: {fileID: 1052262686}
+  mine: {fileID: 1052262685}
 --- !u!114 &2050523606
 MonoBehaviour:
   m_ObjectHideFlags: 0
