@@ -2637,7 +2637,7 @@ RectTransform:
   - {fileID: 1965196983}
   - {fileID: 631717023}
   m_Father: {fileID: 1649324268}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150, y: -50}
@@ -4422,8 +4422,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 985095918}
   - {fileID: 825027754}
+  - {fileID: 985095918}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
@@ -5748,6 +5748,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11414382, guid: 87da1c7cad492e945b0f7105c74080a0, type: 2}
+      propertyPath: smokeParticle
+      value: 
+      objectReference: {fileID: 183838, guid: 5e1af597b13aece499bd1df91b312c9f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87da1c7cad492e945b0f7105c74080a0, type: 2}
   m_IsPrefabParent: 0

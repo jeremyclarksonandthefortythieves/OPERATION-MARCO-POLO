@@ -9,6 +9,8 @@ public class enemySight : MonoBehaviour
 	public Vector3 personalLastSighting;
     public bool allowFire = false;
 
+	private float timer = 0;
+	private bool inSmoke = false;
 	private NavMeshAgent navAgent;
 	private SphereCollider col;
 	private LastPlayerSighting lastPlayerSighting;
@@ -33,6 +35,14 @@ public class enemySight : MonoBehaviour
 			personalLastSighting = lastPlayerSighting.position;
 
 		previousSighting = lastPlayerSighting.position;
+		Debug.Log(inSmoke);
+		if (inSmoke) {
+			timer += 1 * Time.deltaTime;
+			if(timer > 5) {
+				timer = 0;
+				inSmoke = false;
+			}
+		}
 	}
 
 	void OnTriggerEnter(Collider coll) {
@@ -46,8 +56,19 @@ public class enemySight : MonoBehaviour
 		}
 	}
 
+
+	void OnParticleCollision(GameObject coll) {
+		if (coll.tag == "Smoke") {
+			inSmoke = true;
+			personalLastSighting = gameObject.transform.position;
+			navAgent.destination = gameObject.transform.position;
+			Debug.Log("in  smoke");
+		}
+		//personalLastSighting = gameObject.transform.position;
+	}
+
 	void OnTriggerStay(Collider other) {
-		if (other.gameObject.tag == "Player") {
+		if (other.gameObject.tag == "Player" && !inSmoke) {
 
 			playerInSight = false;
             allowFire = false;
@@ -76,6 +97,8 @@ public class enemySight : MonoBehaviour
 			}
 		}
 	}
+
+	
 
 	void OnTriggerExit(Collider other) {
 		if (other.gameObject == player)
