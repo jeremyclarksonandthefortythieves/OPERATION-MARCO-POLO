@@ -16,7 +16,6 @@ public class LevelController : MonoBehaviour {
 		gameController = GameObject.FindGameObjectWithTag("GameController");
 		gameController.GetComponent<LoadSaveScript>().Load();
 		StartCoroutine(FadeIn());
-
 	}
 
 	//Checks if objectives are complete and gives player exp
@@ -75,7 +74,6 @@ public class LevelController : MonoBehaviour {
 	public void NextLevel() {
 		gameController.GetComponent<LoadSaveScript>().Save();
 		Application.LoadLevel(Application.loadedLevel + 1);
-
 	}
 
 	public void ContinueGame() {

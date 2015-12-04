@@ -27,8 +27,7 @@ public class PlayerControl : MonoBehaviour
 	public bool sneaking;
 	public GameObject soundTrigger;
 	public GameObject bullet;
-	public GameObject smokeGrenade;
-	public GameObject distractionMine;
+	public GameObject grenade;
 
 	void Start() {
 		anim = GetComponent<Animator>();
@@ -229,19 +228,19 @@ public class PlayerControl : MonoBehaviour
 				GameObject soundTrig = Instantiate(soundTrigger, transform.position, transform.rotation) as GameObject;
 				GetComponent<AudioSource>().Play();
 				if (silencerEnabled) {
-					soundTrig.GetComponent<SphereCollider>().radius = 5f;
-				} else {
 					soundTrig.GetComponent<SphereCollider>().radius = 1f;
+				} else {
+					soundTrig.GetComponent<SphereCollider>().radius = 5f;
 				}
 
 				break;
 			case "smoke":
-				GameObject smokeNade = Instantiate(smokeGrenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
+				GameObject smokeNade = Instantiate(grenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
 				smokeNade.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
 				break;
 
 			case "distraction":
-				GameObject disMine = Instantiate(distractionMine, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
+				GameObject disMine = Instantiate(grenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
 				disMine.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
 				break;
 
