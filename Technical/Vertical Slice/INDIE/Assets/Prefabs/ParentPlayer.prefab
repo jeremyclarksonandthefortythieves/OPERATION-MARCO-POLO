@@ -1633,7 +1633,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.350482, y: 0, z: -1.58627534}
+  m_LocalPosition: {x: 9.74386597, y: -2.98023508e-08, z: -2.84613037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404944}
@@ -2784,8 +2784,7 @@ MonoBehaviour:
   sneaking: 0
   soundTrigger: {fileID: 176742, guid: 329d89c1837f01c4ab84df691b5eb8d9, type: 2}
   bullet: {fileID: 145684, guid: 3800710bebe8cf743845d25c3fb6e058, type: 2}
-  smokeGrenade: {fileID: 0}
-  distractionMine: {fileID: 0}
+  grenade: {fileID: 122664, guid: ab6f7e5a645f7cc4bac7fc2623c49084, type: 2}
 --- !u!114 &11451526
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -76,7 +76,7 @@ public class TerminalScript : MonoBehaviour {
 
 	//opens the linked door
 	public void OpenDoor() {
-		if (Application.loadedLevel == 3) GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().noDetection = true;
+		if (Application.loadedLevel == 3) GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().SetObjective2();
 
 		locked = false;
 		active = false;

@@ -4,8 +4,12 @@ using System.Collections;
 
 public class LevelController : MonoBehaviour {
 
-	public bool noDetection = true;
-	public bool noKills = true;
+	private bool objective1 = false;
+	private bool objective2 = false;
+
+	public GameObject obj1UI;
+	public GameObject obj2UI;
+
 	public GameObject fadePanel;
 
 	private GameObject gameController;
@@ -18,22 +22,30 @@ public class LevelController : MonoBehaviour {
 		StartCoroutine(FadeIn());
 	}
 
+	public void SetObjective1() {
+		objective1 = true;
+		obj1UI.SetActive(true);
+
+	}
+
+	public void SetObjective2() {
+		objective2 = true;
+		obj2UI.SetActive(true);
+	}
+
 	//Checks if objectives are complete and gives player exp
-	//
 	public void CompleteLevel() {
 		GetComponent<LoadSaveScript>().Save();
-		if (noDetection) {
+		if (objective1) {
 			player.GetComponent<PlayerControl>().GetExp();
-			Debug.Log("completed with no detection");
+			//Debug.Log("completed with no detection");
 		}
-		if (noKills) {
+		if (objective2) {
 			player.GetComponent<PlayerControl>().GetExp();
-			Debug.Log("completed without kills!");
+			//Debug.Log("completed without kills!");
 		}
-		//GameObject fade = Instantiate(fadePanel) as GameObject;
 		//fade
 		StartCoroutine(FadeOut());
-		//NextLevel();
 		//spawns the upgrade menu here with button for next level
 	}
 

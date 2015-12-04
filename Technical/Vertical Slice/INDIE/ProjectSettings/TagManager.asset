@@ -16,6 +16,7 @@ TagManager:
   - EndLevel
   - SoundTrigger
   - Door1
+  - DistractionObject
   layers:
   - Default
   - TransparentFX

@@ -82,7 +82,7 @@ public class PlayerControl : MonoBehaviour
 		if (Input.GetKey(KeyCode.S)) moveDirection.z = -1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
 		if (Input.GetKey(KeyCode.D)) moveDirection.x = 1f * speed;
-		if (Input.GetKeyDown(KeyCode.Alpha1) && distractionAmount > 0) Shoot("smoke");
+		if (Input.GetKeyDown(KeyCode.Alpha1) && smokeAmount > 0) Shoot("smoke");
 		if (Input.GetKeyDown(KeyCode.Alpha2) && distractionAmount > 0) Shoot("distraction");
 		if (Input.GetKeyDown(KeyCode.Mouse0)) Shoot("bullet");
 		if (Input.GetKeyDown(KeyCode.LeftShift)) {
@@ -147,7 +147,7 @@ public class PlayerControl : MonoBehaviour
 						hidingObject = hitInfo.collider.gameObject;
 						hiding = true;
 						controlsEnabled = false;
-						if (Application.loadedLevel == 3) gameController.GetComponent<LevelController>().noKills = true;
+						if (Application.loadedLevel == 3) gameController.GetComponent<LevelController>().SetObjective1();
 						MeshRenderer[] mesh = gameObject.GetComponentsInChildren<MeshRenderer>();
 						foreach (MeshRenderer m in mesh) {
 							m.enabled = false;
@@ -235,13 +235,19 @@ public class PlayerControl : MonoBehaviour
 
 				break;
 			case "smoke":
-				GameObject smokeNade = Instantiate(grenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
-				smokeNade.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
+				smokeAmount -= 1;
+				GameObject smokeNade = Instantiate(grenade, transform.position + (transform.forward ), transform.rotation) as GameObject;
+				smokeNade.GetComponent<Rigidbody>().AddForce(transform.forward * 350);
 				break;
 
 			case "distraction":
-				GameObject disMine = Instantiate(grenade, transform.position + (transform.forward * 0.5f), transform.rotation) as GameObject;
-				disMine.GetComponent<Rigidbody>().AddForce(transform.forward * 250f);
+				distractionAmount -= 1;
+				GameObject disMine = Instantiate(grenade, transform.position + (transform.forward), transform.rotation) as GameObject;
+				disMine.GetComponent<Rigidbody>().AddForce(transform.forward * 350f);
+				disMine.tag = "DistractionObject";
+                disMine.AddComponent<SphereCollider>();
+				disMine.GetComponent<SphereCollider>().isTrigger = true;
+				disMine.GetComponent<SphereCollider>().radius = 10f;
 				break;
 
 		}
@@ -257,7 +263,7 @@ public class PlayerControl : MonoBehaviour
 	//player gets exp for completing objectives		
 	//if he completes 2 he gets a token(money) to buy upgrades
 	public void GetExp() {
-		exp += 1;
+		exp += 2;
 		if (exp >= 2) {
 			exp = 0;
 			money += 1;
