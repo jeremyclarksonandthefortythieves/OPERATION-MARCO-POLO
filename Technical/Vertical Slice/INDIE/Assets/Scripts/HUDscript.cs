@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 public class HUDscript : MonoBehaviour {
 
-    public Image crouch;
-    public Image stand;
+    public Image crouch,
+                 stand,
+                 smoke,
+                 mine;
 
     private PlayerControl player;
     
