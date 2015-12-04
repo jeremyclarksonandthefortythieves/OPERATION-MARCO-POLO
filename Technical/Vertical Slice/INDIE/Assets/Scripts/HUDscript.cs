@@ -16,7 +16,7 @@ public class HUDscript : MonoBehaviour {
 	}
 
 	void Update () {
-    /*    if (player.sneaking)
+        if (player.sneaking)
         {
             crouch.enabled = true;
             stand.enabled = false;
@@ -26,6 +26,6 @@ public class HUDscript : MonoBehaviour {
         {
             stand.enabled = true;
             crouch.enabled = false;
-        }*/
+        }
 	}
 }

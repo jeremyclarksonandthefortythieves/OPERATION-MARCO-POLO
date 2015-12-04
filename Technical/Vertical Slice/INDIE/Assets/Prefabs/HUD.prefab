@@ -28,7 +28,6 @@ GameObject:
   - 223: {fileID: 22340634}
   - 114: {fileID: 11464286}
   - 114: {fileID: 11476072}
-  - 114: {fileID: 11437640}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -107,19 +106,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11437640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1241876d300231a4ca59257e4f85697f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crouch: {fileID: 11400510}
-  stand: {fileID: 11416846}
 --- !u!114 &11464286
 MonoBehaviour:
   m_ObjectHideFlags: 1

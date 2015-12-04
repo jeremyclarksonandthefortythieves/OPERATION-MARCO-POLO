@@ -5,9 +5,6 @@ public class pauseMenuScript : MonoBehaviour {
 
     public Canvas pauseMenu;
 
-    enemyAI enemyAI;
-    PlayerControl playerControl;
-
     public bool canvasOn = false;
 
     /* private Button pauseExit,
@@ -16,8 +13,6 @@ public class pauseMenuScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        enemyAI = GameObject.FindGameObjectWithTag("Enemy").GetComponent<enemyAI>();
-        playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 
         pauseMenu.enabled = false;
     }
@@ -45,7 +40,7 @@ public class pauseMenuScript : MonoBehaviour {
 
     public void pauseExit()
     {
-        Application.Quit();
+        Application.LoadLevel(1);
     }
 
     public void pauseContinue()
