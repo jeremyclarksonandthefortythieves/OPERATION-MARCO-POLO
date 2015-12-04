@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880cfc81dd1e5d2449c2e8c7d4d7f1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noDetection: 1
-  noKills: 1
+  obj1UI: {fileID: 0}
+  obj2UI: {fileID: 0}
   fadePanel: {fileID: 155618, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
 --- !u!114 &11434370
 MonoBehaviour:
@@ -103,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouch: {fileID: 0}
   stand: {fileID: 0}
+  smoke: {fileID: 0}
+  mine: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

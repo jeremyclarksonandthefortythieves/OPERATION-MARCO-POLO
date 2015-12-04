@@ -15,13 +15,30 @@ public class HUDscript : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
         crouch.enabled = false;
         stand.enabled = true;
-	}
+        mine.enabled = false;
+        smoke.enabled = false;
+    }
 
 	void Update () {
+        if (player.smokeAmount > 0)
+        {
+            smoke.enabled = true;
+        }
+        else
+            smoke.enabled = false;
+
+        if (player.distractionAmount > 0)
+        {
+            mine.enabled = true;
+        }
+        else
+            mine.enabled = false;
+
         if (player.sneaking)
         {
             crouch.enabled = true;
             stand.enabled = false;
+           
         }
             
         else
