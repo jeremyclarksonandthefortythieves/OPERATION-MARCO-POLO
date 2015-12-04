@@ -102,6 +102,8 @@ public class enemyAI : MonoBehaviour {
 
 	}
 
+	
+
 	public void GetDamage(int i) {
 		health -= i;
 		if(health <= 0 || !alerted) {

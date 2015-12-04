@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour
 	public int smokeAmount = 0;
 	public int distractionAmount = 0;
 
+	public GameObject smokeParticle;
 	public bool controlsEnabled;
 	public int exp;
 	public GameObject walkieTalkie;
@@ -238,6 +239,9 @@ public class PlayerControl : MonoBehaviour
 				smokeAmount -= 1;
 				GameObject smokeNade = Instantiate(grenade, transform.position + (transform.forward ), transform.rotation) as GameObject;
 				smokeNade.GetComponent<Rigidbody>().AddForce(transform.forward * 350);
+				GameObject smoke = Instantiate(smokeParticle, smokeNade.transform.position, transform.rotation) as GameObject;
+				smoke.transform.SetParent(smokeNade.transform);
+				Destroy(smokeNade, 6f);
 				break;
 
 			case "distraction":
@@ -247,7 +251,8 @@ public class PlayerControl : MonoBehaviour
 				disMine.tag = "DistractionObject";
                 disMine.AddComponent<SphereCollider>();
 				disMine.GetComponent<SphereCollider>().isTrigger = true;
-				disMine.GetComponent<SphereCollider>().radius = 10f;
+				disMine.GetComponent<SphereCollider>().radius = 25f;
+				Destroy(disMine, 5f);
 				break;
 
 		}
