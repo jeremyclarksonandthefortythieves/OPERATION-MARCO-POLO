@@ -112,7 +112,7 @@ public class enemyAI : MonoBehaviour {
 			gameObject.GetComponent<NavMeshAgent>().enabled = false;
 			gameObject.GetComponent<enemyAI>().enabled = false;
 			anim.SetTrigger("Die");
-
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>().SetObjective1(false);
 
 		}
 	}

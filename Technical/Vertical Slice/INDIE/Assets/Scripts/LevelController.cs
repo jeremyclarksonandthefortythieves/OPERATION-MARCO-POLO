@@ -22,15 +22,14 @@ public class LevelController : MonoBehaviour {
 		StartCoroutine(FadeIn());
 	}
 
-	public void SetObjective1() {
-		objective1 = true;
-		obj1UI.SetActive(true);
-
+	public void SetObjective1(bool b = true) {
+		objective1 = b;
+		obj1UI.SetActive(b);
 	}
 
-	public void SetObjective2() {
-		objective2 = true;
-		obj2UI.SetActive(true);
+	public void SetObjective2(bool b = true) {
+		objective2 = b;
+		obj2UI.SetActive(b);
 	}
 
 	//Checks if objectives are complete and gives player exp
