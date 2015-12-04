@@ -944,6 +944,93 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 715928008}
+--- !u!1001 &781611808
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2057786194}
+    m_Modifications:
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_Pivot.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+      propertyPath: m_Pivot.y
+      value: .5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &781611809 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22492988, guid: ba2349a9d89423c49b06f3d080d98285,
+    type: 2}
+  m_PrefabInternal: {fileID: 781611808}
 --- !u!114 &820342841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,7 +1640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noDetection: 1
   noKills: 1
-  loadUI: {fileID: 0}
+  fadePanel: {fileID: 155618, guid: ba2349a9d89423c49b06f3d080d98285, type: 2}
 --- !u!114 &1193366679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,11 +2372,6 @@ MonoBehaviour:
   silencerDone: {fileID: 323361543}
   smokeDone: {fileID: 1350810389}
   mineDone: {fileID: 645185361}
-  logo1: {fileID: 0}
-  logo2: {fileID: 0}
-  logo3: {fileID: 0}
-  logo4: {fileID: 0}
-  logo5: {fileID: 0}
   notEnough: {fileID: 1488918745}
   tokens: {fileID: 1042864304}
 --- !u!4 &1356001337
@@ -3305,6 +3387,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1251070447}
+  - {fileID: 781611809}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}

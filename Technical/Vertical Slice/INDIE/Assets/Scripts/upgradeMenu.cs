@@ -11,17 +11,18 @@ public class upgradeMenu : MonoBehaviour
                  Mine,
                  silencerDone,
                  smokeDone,
-                 mineDone,
-                 logo1,
+                 mineDone;
+	public Text notEnough,
+				tokens;
+
+    private Image logo1,
                  logo2,
                  logo3,
                  logo4,
                  logo5;
-	public Text notEnough,
-				tokens;
 
-	//private PlayerControl player;
-	private LoadSaveScript player;
+    //private PlayerControl player;
+    private LoadSaveScript player;
 	private float textTimer = 2;
 
 	// Use this for initialization
